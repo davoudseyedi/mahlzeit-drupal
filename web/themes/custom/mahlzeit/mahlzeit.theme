@@ -1,0 +1,43 @@
+<?php
+
+/**
+ * @file
+ * Theme hooks for the Mahlzeit theme.
+ */
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function mahlzeit_preprocess_html(array &$variables): void {
+  $variables['html_attributes']->addClass('mahlzeit-html');
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function mahlzeit_preprocess_page(array &$variables): void {
+  $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+
+  $auth_routes = [
+    'user.login' => 'login',
+    'user.register' => 'register',
+    'user.pass' => 'password',
+  ];
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  $current_path = \Drupal::service('path.current')->getPath();
+
+  $variables['auth_page'] = $auth_routes[$route_name] ?? [
+    '/user/login' => 'login',
+    '/user/register' => 'register',
+    '/user/password' => 'password',
+  ][$current_path] ?? NULL;
+  $variables['auth_registration_open'] = \Drupal::config('user.settings')->get('register') !== 'admin_only';
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function mahlzeit_preprocess_node(array &$variables): void {
+  $variables['article_date'] = $variables['node']->getCreatedTime();
+  $variables['article_type'] = $variables['node']->bundle();
+}

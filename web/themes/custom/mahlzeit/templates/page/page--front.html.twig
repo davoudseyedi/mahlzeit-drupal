@@ -1,0 +1,303 @@
+<div class="site-shell">
+  {% if page.announcement %}
+    <div class="announcement">{{ page.announcement }}</div>
+  {% endif %}
+  <header class="site-header" data-site-header>
+    <div class="container header-inner">
+      <a class="site-logo" href="{{ path('<front>') }}" aria-label="{{ 'Mahlzeit home'|t }}">
+        <img class="logo-mark" src="{{ base_path ~ directory }}/images/mahlzeit-mark.png" alt="" aria-hidden="true">
+        <span class="logo-word">Mahlzeit</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-navigation" data-menu-toggle>
+        <span class="visually-hidden">{{ 'Open navigation'|t }}</span>
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="desktop-nav" aria-label="{{ 'Main navigation'|t }}">{{ page.primary_menu }}</nav>
+      <div class="header-actions">
+        <a class="button button--small button--secondary" href="{{ path('mahlzeit_consultation.form') }}">{{ 'Request consultation'|t }}</a>
+        <a class="button button--small" href="https://app.mahlzeitlab.com" target="_blank" rel="noopener noreferrer">{{ 'Start learning'|t }}</a>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobile-navigation" data-mobile-nav hidden>
+      <div class="container">{{ page.primary_menu }}<a class="button button--block" href="https://app.mahlzeitlab.com" target="_blank" rel="noopener noreferrer">{{ 'Start learning'|t }}</a></div>
+    </div>
+  </header>
+
+  {% if page.breadcrumb %}<div class="container breadcrumb-region">{{ page.breadcrumb }}</div>{% endif %}
+  {% if page.highlighted %}{{ page.highlighted }}{% endif %}
+  {% if page.content_above %}{{ page.content_above }}{% endif %}
+
+  <main id="main-content" class="site-main" tabindex="-1">
+    <section class="osd-home-hero">
+      <div class="container osd-home-hero__grid">
+        <div class="osd-home-hero__copy">
+          <div class="osd-kicker"><span class="osd-kicker__dot"></span>{{ 'ÖSD PREPARATION'|t }}</div>
+          <h1>{{ 'Speak German like you are in the real exam.'|t }}</h1>
+          <p class="osd-home-hero__lead">{{ 'Practise the ÖSD speaking exam with model tests, clear exam parts and an AI examiner at your level.'|t }}</p>
+          <div class="osd-home-hero__actions">
+            <a class="button" href="https://app.mahlzeitlab.com/speaking" target="_blank" rel="noopener noreferrer">{{ 'Start ÖSD test'|t }} <span aria-hidden="true">↗</span></a>
+            <a class="button button--secondary" href="https://app.mahlzeitlab.com/placement" target="_blank" rel="noopener noreferrer">{{ 'Find your level'|t }}</a>
+          </div>
+          <p class="osd-home-hero__note"><span aria-hidden="true">✓</span>{{ 'A1 free · A2–B2 with a subscription'|t }}</p>
+        </div>
+
+        <div class="osd-hero-visual" aria-label="{{ 'Vorschau auf die ÖSD-Sprechprüfung'|t }}">
+          <div class="osd-orbit osd-orbit--one" aria-hidden="true"></div>
+          <div class="osd-orbit osd-orbit--two" aria-hidden="true"></div>
+          <article class="osd-test-window">
+            <div class="osd-test-window__top"><span><i></i>{{ 'ÖSD · SPRECHEN'|t }}</span><b>B1</b></div>
+            <div class="osd-test-window__body">
+              <span class="osd-test-window__eyebrow">{{ 'MODELLTEST 1'|t }}</span>
+              <h2>{{ 'Gesundheit'|t }}</h2>
+              <div class="osd-progress" aria-label="{{ 'Drei Prüfungsteile'|t }}"><span class="is-active">01</span><i></i><span>02</span><i></i><span>03</span></div>
+              <div class="osd-prompt"><small>{{ 'TEIL 2 · MONOLOG'|t }}</small><strong>{{ 'Bild beschreiben und Meinung äußern'|t }}</strong><span>{{ '1 Bild + Meinung'|t }}</span></div>
+            </div>
+            <div class="osd-test-window__bottom"><span><i></i>{{ 'KI-Prüfungsleitung'|t }}</span><b>{{ 'ca. 11 Min.'|t }}</b></div>
+          </article>
+          <div class="osd-float osd-float--parts"><strong>3</strong><span>{{ 'Prüfungsteile'|t }}</span></div>
+          <div class="osd-float osd-float--report"><span aria-hidden="true">✓</span><div><b>{{ 'Abschlussbericht'|t }}</b><small>{{ 'nach dem Test'|t }}</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="osd-proof-strip" aria-label="{{ 'ÖSD test highlights'|t }}">
+      <div class="container osd-proof-grid">
+        <div><span class="osd-proof-icon">◎</span><strong>{{ '4 levels'|t }}</strong><small>{{ 'A1 to B2'|t }}</small></div>
+        <div><span class="osd-proof-icon">03</span><strong>{{ '3 exam parts'|t }}</strong><small>{{ 'Like the real test'|t }}</small></div>
+        <div><span class="osd-proof-icon">◉</span><strong>{{ 'AI examiner'|t }}</strong><small>{{ 'Question by question'|t }}</small></div>
+        <div><span class="osd-proof-icon">✓</span><strong>{{ 'Final report'|t }}</strong><small>{{ 'Feedback after the test'|t }}</small></div>
+      </div>
+    </section>
+
+    {% if home_vocabulary %}
+      <section class="home-vocabulary-strip" aria-labelledby="home-vocabulary-title">
+        <div class="container">
+          <a class="home-vocabulary-card" href="{{ path('mahlzeit_vocabulary.list') }}">
+            <span class="home-vocabulary-card__label"><span aria-hidden="true">✦</span>{{ 'Today’s vocabulary'|t }}</span>
+            <span class="home-vocabulary-card__content">
+              <span class="home-vocabulary-card__word" dir="ltr"><span class="vocabulary-level">{{ home_vocabulary.level }}</span><strong id="home-vocabulary-title">{{ home_vocabulary.title }}</strong><span class="vocabulary-part">{{ home_vocabulary.part_of_speech ?: 'Word'|t }}</span></span>
+              <span class="home-vocabulary-card__description" dir="ltr">{{ 'Learn how this German word is used.'|t }}</span>
+              <span class="home-vocabulary-card__link">{{ 'Practise flashcards'|t }} →</span>
+            </span>
+          </a>
+        </div>
+      </section>
+    {% endif %}
+
+    <section class="osd-section osd-parts-section" id="how-it-works">
+      <div class="container">
+        <div class="osd-section-heading">
+          <div class="osd-kicker">{{ 'THE PROCESS'|t }}</div>
+          <h2>{{ 'One model test. Three real exam parts.'|t }}</h2>
+          <p>{{ 'Every ÖSD test follows a clear flow. You speak, react and receive feedback afterwards.'|t }}</p>
+        </div>
+        <div class="osd-parts-grid">
+          <article class="osd-part-card">
+            <span class="osd-part-card__number">01</span>
+            <span class="osd-part-card__icon">◌</span>
+            <h3>{{ 'Introduce yourself'|t }}</h3>
+            <p>{{ 'Answer personal questions and talk about your everyday life, experience or goals.'|t }}</p>
+            <small>{{ 'Introduction'|t }}</small>
+          </article>
+          <article class="osd-part-card osd-part-card--featured">
+            <span class="osd-part-card__number">02</span>
+            <span class="osd-part-card__icon">▧</span>
+            <h3>{{ 'Picture & opinion'|t }}</h3>
+            <p>{{ 'Describe a picture, tell a picture story or give a short talk—depending on your level.'|t }}</p>
+            <small>{{ 'Picture description · monologue · presentation'|t }}</small>
+          </article>
+          <article class="osd-part-card">
+            <span class="osd-part-card__number">03</span>
+            <span class="osd-part-card__icon">↔</span>
+            <h3>{{ 'Take action together'|t }}</h3>
+            <p>{{ 'Plan, decide and discuss with the AI examiner—always one question at a time.'|t }}</p>
+            <small>{{ 'Dialogue · planning · discussion'|t }}</small>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="osd-section osd-levels-section" id="model-tests">
+      <div class="container">
+        <div class="osd-section-heading osd-section-heading--row">
+          <div><div class="osd-kicker">{{ 'MODEL TESTS'|t }}</div><h2>{{ 'Choose your level and start.'|t }}</h2></div>
+          <p>{{ 'Live from the app’s ÖSD catalog: topics, duration and exam parts are loaded from the API.'|t }}</p>
+        </div>
+        {% if home_exams %}
+          <div class="osd-level-grid">
+            {% for level in home_exams %}
+              <article class="osd-level-card osd-level-card--{{ level.level|lower }}">
+                <div class="osd-level-card__top"><span class="osd-level-badge">{{ level.level }}</span><span class="osd-level-status">{{ level.modules|length }} {{ 'Tests'|t }}</span></div>
+                <h3>{{ level.label }}</h3>
+                <p>{{ level.level }} · {{ 'ÖSD speaking'|t }}</p>
+                <ul>
+                  {% for module in level.modules %}
+                    <li class="osd-level-card__module">
+                      <a href="https://app.mahlzeitlab.com/speaking/exam/{{ level.level|lower }}/{{ module.slug }}" target="_blank" rel="noopener noreferrer">
+                        <strong>{{ module.title }}</strong>
+                        <small>{% if module.topic %}{{ module.topic }} · {% endif %}{% if module.minutes %}{{ module.minutes }} min · {% endif %}{{ module.teil_count }} {{ 'parts'|t }}</small>
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+                <a class="osd-level-card__all" href="https://app.mahlzeitlab.com/speaking" target="_blank" rel="noopener noreferrer">{{ 'Open all tests'|t }} <span>→</span></a>
+              </article>
+            {% endfor %}
+          </div>
+        {% else %}
+          <div class="osd-content-empty"><strong>{{ 'The model tests are loading.'|t }}</strong><a href="https://app.mahlzeitlab.com/speaking" target="_blank" rel="noopener noreferrer">{{ 'Open in the app'|t }} →</a></div>
+        {% endif %}
+      </div>
+    </section>
+
+    {% if home_plans %}
+      <section class="osd-section osd-plans-section" id="plans">
+        <div class="container">
+          <div class="osd-section-heading">
+            <div class="osd-kicker">{{ 'PLANS FROM THE APP'|t }}</div>
+            <h2>{{ 'Choose the access that fits you.'|t }}</h2>
+            <p>{{ 'Prices and limits are loaded directly from the current Mahlzeit API.'|t }}</p>
+          </div>
+          <div class="osd-plans-grid">
+            {% for plan in home_plans %}
+              <article class="osd-plan-card{% if plan.is_recommended %} is-recommended{% endif %}">
+                {% if plan.is_recommended %}<span class="osd-plan-card__ribbon">{{ 'Recommended'|t }}</span>{% endif %}
+                <div class="osd-plan-card__top"><span>{{ plan.tier }}</span>{% if plan.duration_months %}<small>{{ plan.duration_months }} {{ plan.duration_months == 1 ? 'month'|t : 'months'|t }}</small>{% endif %}</div>
+                <h3>{{ plan.name }}</h3>
+                <div class="osd-plan-card__price">{% if plan.price_rial %}<strong>{{ plan.price_rial|number_format(0, '.', ',') }}</strong><span>IRR</span>{% else %}<strong>${{ plan.price_usd|number_format(0, '.', ',') }}</strong>{% endif %}</div>
+                <p>{{ plan.description ?: 'Full access to the learning experience.'|t }}</p>
+                <div class="osd-plan-card__limit"><strong>{{ plan.monthly_minutes_limit }}</strong><span>{{ 'minutes per month'|t }}</span></div>
+                <a class="button{% if not plan.is_recommended %} button--secondary{% endif %} button--block" href="https://app.mahlzeitlab.com/subscribe" target="_blank" rel="noopener noreferrer">{{ 'View plan in app'|t }} <span aria-hidden="true">↗</span></a>
+              </article>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+    {% endif %}
+
+    <section class="osd-simulation-section">
+      <div class="container osd-simulation-grid">
+        <div class="osd-simulation-copy">
+          <div class="osd-kicker osd-kicker--light">{{ 'EXAM SIMULATION'|t }}</div>
+          <h2>{{ 'Speak freely. Get your report.'|t }}</h2>
+          <p>{{ 'The AI stays in the examiner role, asks one question at a time and does not interrupt you with corrections. Your evaluation comes at the end.'|t }}</p>
+          <ul class="osd-check-list">
+            <li><span>✓</span>{{ 'Clear exam questions, one at a time'|t }}</li>
+            <li><span>✓</span>{{ 'No interruptions during the conversation'|t }}</li>
+            <li><span>✓</span>{{ 'Evaluation and feedback in the final report'|t }}</li>
+          </ul>
+          <a class="button button--yellow" href="https://app.mahlzeitlab.com/speaking" target="_blank" rel="noopener noreferrer">{{ 'Open ÖSD test'|t }} <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="osd-report-card" aria-label="{{ 'Speaking report preview'|t }}">
+          <div class="osd-report-card__top"><span>{{ 'FINAL REPORT'|t }}</span><b>B1</b></div>
+          <div class="osd-report-score"><strong>86</strong><span>/ 100<br>{{ 'Overall'|t }}</span></div>
+          <div class="osd-report-bars"><div><span>{{ 'Task'|t }}</span><i><b style="width: 88%"></b></i><strong>88</strong></div><div><span>{{ 'Fluency'|t }}</span><i><b style="width: 82%"></b></i><strong>82</strong></div><div><span>{{ 'Expression'|t }}</span><i><b style="width: 86%"></b></i><strong>86</strong></div></div>
+          <div class="osd-report-note"><span>✓</span><p><strong>{{ 'Next focus'|t }}</strong><small>{{ 'Explain your opinion in more detail.'|t }}</small></p></div>
+        </div>
+      </div>
+    </section>
+
+    {% if home_news %}
+      <section class="osd-section osd-content-section" id="latest-news">
+        <div class="container">
+          <div class="osd-section-heading osd-section-heading--row">
+            <div><div class="osd-kicker">{{ 'LATEST NEWS'|t }}</div><h2>{{ 'Learn German with the latest news.'|t }}</h2></div>
+            <a class="osd-section-link" href="{{ path('mahlzeit_news.list') }}">{{ 'All news'|t }} <span>→</span></a>
+          </div>
+          <div class="osd-content-grid">
+            {% for item in home_news %}
+              <article class="osd-content-card osd-content-card--{{ item.tone }}">
+                <div class="osd-content-card__meta"><span>{{ item.category }}</span><time datetime="{{ item.date_iso }}">{{ item.date }}</time></div>
+                <h3><a href="{{ item.detail_url }}">{{ item.title }}</a></h3>
+                {% if item.excerpt %}<p>{{ item.excerpt }}</p>{% endif %}
+                <a class="osd-content-card__link" href="{{ item.detail_url }}">{{ 'Read and learn'|t }} <span aria-hidden="true">→</span></a>
+              </article>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+    {% endif %}
+
+    {% if home_blog %}
+      <section class="osd-section osd-blog-section" id="latest-blog">
+        <div class="container">
+          <div class="osd-section-heading osd-section-heading--row">
+            <div><div class="osd-kicker">{{ 'LATEST BLOG'|t }}</div><h2>{{ 'Practical ideas for learning German.'|t }}</h2></div>
+            <a class="osd-section-link" href="{{ path('mahlzeit_blog.list') }}">{{ 'Go to blog'|t }} <span>→</span></a>
+          </div>
+          <div class="osd-content-grid osd-blog-grid">
+            {% for post in home_blog %}
+              <article class="osd-content-card osd-blog-card">
+                {% if post.image %}<a class="osd-blog-card__image" href="{{ post.url }}">{{ post.image }}</a>{% else %}<a class="osd-blog-card__image osd-blog-card__image--{{ loop.index0 % 3 }}" href="{{ post.url }}"><span aria-hidden="true">M</span></a>{% endif %}
+                <div class="osd-content-card__meta"><span>{{ post.category ?: 'German learning'|t }}</span><time datetime="{{ post.date_iso }}">{{ post.date }}</time></div>
+                <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                {% if post.excerpt %}<p>{{ post.excerpt }}</p>{% endif %}
+                <a class="osd-content-card__link" href="{{ post.url }}">{{ 'Read article'|t }} <span aria-hidden="true">→</span></a>
+              </article>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+    {% endif %}
+
+    <section class="osd-final-cta">
+      <div class="container osd-final-cta__inner">
+        <div class="osd-kicker">{{ 'YOUR NEXT STEP'|t }}</div>
+        <h2>{{ 'Ready for your next model test?'|t }}</h2>
+        <p>{{ 'Choose your level and speak your way through the ÖSD exam.'|t }}</p>
+        <div class="osd-final-cta__actions"><a class="button" href="https://app.mahlzeitlab.com/speaking" target="_blank" rel="noopener noreferrer">{{ 'Start model tests'|t }} <span aria-hidden="true">↗</span></a><a class="button button--secondary" href="{{ path('mahlzeit_consultation.form') }}">{{ 'Personal consultation'|t }}</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="site-logo site-logo--footer" href="{{ path('<front>') }}"><img class="logo-mark" src="{{ base_path ~ directory }}/images/mahlzeit-mark.png" alt="" aria-hidden="true"><span class="logo-word">Mahlzeit</span></a>
+        <p>{{ 'Learn German. Simply understand.'|t }}</p>
+      </div>
+      <div class="footer-column">
+        <h2>{{ 'Product'|t }}</h2>
+        <ul class="footer-links">
+          <li><a href="https://app.mahlzeitlab.com/speaking" target="_blank" rel="noopener noreferrer">{{ 'ÖSD speaking tests'|t }}</a></li>
+          <li><a href="https://app.mahlzeitlab.com/placement" target="_blank" rel="noopener noreferrer">{{ 'Placement test'|t }}</a></li>
+          <li><a href="{{ path('mahlzeit_consultation.form') }}">{{ 'Request consultation'|t }}</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h2>{{ 'Learn'|t }}</h2>
+        <ul class="footer-links">
+          <li><a href="{{ path('mahlzeit_news.list') }}">{{ 'News'|t }}</a></li>
+          <li><a href="{{ path('mahlzeit_vocabulary.list') }}">{{ 'Vocabulary'|t }}</a></li>
+          <li><a href="{{ path('mahlzeit_blog.list') }}">{{ 'Blog'|t }}</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h2>{{ 'Resources'|t }}</h2>
+        <ul class="footer-links">
+          <li><a href="https://www.duden.de/" target="_blank" rel="noopener noreferrer">{{ 'Duden dictionary'|t }}</a></li>
+          <li><a href="https://www.tagesschau.de/" target="_blank" rel="noopener noreferrer">{{ 'Tagesschau news'|t }}</a></li>
+          <li><a href="{{ path('mahlzeit_consultation.form') }}">{{ 'Personal consultation'|t }}</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h2>{{ 'Company'|t }}</h2>
+        <ul class="footer-links">
+          <li><a href="{{ path('<front>') }}">{{ 'Home'|t }}</a></li>
+          <li><a href="{{ path('mahlzeit_consultation.form') }}">{{ 'Contact us'|t }}</a></li>
+          <li><a href="https://app.mahlzeitlab.com/" target="_blank" rel="noopener noreferrer">{{ 'Open the app'|t }}</a></li>
+        </ul>
+      </div>
+      <div class="footer-column footer-column--legal">
+        <h2>{{ 'Legal'|t }}</h2>
+        <ul class="footer-links">
+          <li><a href="https://app.mahlzeitlab.com/privacy" target="_blank" rel="noopener noreferrer">{{ 'Privacy'|t }}</a></li>
+          <li><a href="https://app.mahlzeitlab.com/terms" target="_blank" rel="noopener noreferrer">{{ 'Terms'|t }}</a></li>
+          <li><a href="https://app.mahlzeitlab.com/imprint" target="_blank" rel="noopener noreferrer">{{ 'Imprint'|t }}</a></li>
+        </ul>
+        <a class="enamad-badge" referrerpolicy="origin" target="_blank" rel="noopener noreferrer" href="https://trustseal.enamad.ir/?id=7805276&amp;Code=btU46dMVmYvBjczSmhFwAZJxMcYOVAHf" aria-label="{{ 'View Mahlzeit eNAMAD trust seal'|t }}"><img referrerpolicy="origin" src="https://trustseal.enamad.ir/logo.aspx?id=7805276&amp;Code=btU46dMVmYvBjczSmhFwAZJxMcYOVAHf" alt="{{ 'eNAMAD trust seal'|t }}" style="cursor:pointer" code="btU46dMVmYvBjczSmhFwAZJxMcYOVAHf" loading="lazy"></a>
+      </div>
+    </div>
+    <div class="container footer-bottom"><span>© {{ 'now'|date('Y') }} Mahlzeit</span><span>{{ 'ÖSD preparation for real conversations.'|t }}</span></div>
+  </footer>
+</div>

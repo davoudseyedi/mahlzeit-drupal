@@ -1,0 +1,37 @@
+<div class="admin-vocabulary-page">
+  <div class="admin-vocabulary-actions">
+    <a class="button button--small" href="{{ add_url }}">{{ 'Add vocabulary item'|t }}</a>
+    <a class="button button--small button--secondary" href="{{ sync_url }}">{{ 'Sync Duden word of the day'|t }}</a>
+  </div>
+
+  {% if items %}
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>{{ 'Word'|t }}</th>
+            <th>{{ 'Level'|t }}</th>
+            <th>{{ 'Part of speech'|t }}</th>
+            <th>{{ 'Published'|t }}</th>
+            <th>{{ 'Status'|t }}</th>
+            <th>{{ 'Operations'|t }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in items %}
+            <tr>
+              <td><strong dir="ltr">{{ item.title }}</strong><br><small>{{ item.description|striptags|slice(0, 120) }}{% if item.description|length > 120 %}…{% endif %}</small></td>
+              <td>{{ item.level }}</td>
+              <td>{{ item.part_of_speech ?: '—' }}</td>
+              <td>{{ item.published_date ?: '—' }}</td>
+              <td>{{ item.is_active ? 'Active'|t : 'Hidden'|t }}</td>
+              <td><a href="{{ item.edit_url }}">{{ 'Edit'|t }}</a> · <a href="{{ item.delete_url }}">{{ 'Delete'|t }}</a></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% else %}
+    <p>{{ 'No vocabulary items have been added yet.'|t }}</p>
+  {% endif %}
+</div>

@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * @file
+ * Consultation request functionality for Mahlzeit.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function mahlzeit_consultation_theme(array $existing, string $type, string $theme, string $path): array {
+  return [
+    'mahlzeit_consultation_page' => [
+      'variables' => [
+        'form' => NULL,
+      ],
+      'template' => 'consultation-page',
+      'path' => $path . '/templates',
+    ],
+    'mahlzeit_consultation_admin' => [
+      'variables' => [
+        'requests' => [],
+      ],
+      'template' => 'consultation-admin',
+      'path' => $path . '/templates',
+    ],
+  ];
+}

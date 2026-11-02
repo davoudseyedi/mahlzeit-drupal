@@ -1,0 +1,5 @@
+name: Mahlzeit Consultation
+type: module
+description: 'Provides a consultation request form and an administrative request inbox.'
+package: Custom
+core_version_requirement: '^11'

@@ -1,0 +1,59 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.blog.field_blog_body
+    - field.field.node.blog.field_blog_category
+    - field.field.node.blog.field_blog_hero
+    - field.field.node.blog.field_blog_tags
+    - image.style.medium
+    - node.type.blog
+  module:
+    - image
+    - text
+id: node.blog.teaser
+targetEntityType: node
+bundle: blog
+mode: teaser
+content:
+  field_blog_body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 180
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_blog_category:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_blog_hero:
+    type: image
+    label: hidden
+    settings:
+      image_link: content
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: -1
+    region: content
+  field_blog_tags:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

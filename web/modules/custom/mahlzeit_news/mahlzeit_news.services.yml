@@ -1,0 +1,8 @@
+services:
+  mahlzeit_news.news:
+    class: Drupal\mahlzeit_news\Service\NewsService
+    arguments:
+      - '@database'
+      - '@http_client'
+      - '@state'
+      - '@logger.factory'

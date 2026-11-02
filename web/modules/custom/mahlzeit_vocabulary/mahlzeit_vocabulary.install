@@ -1,0 +1,134 @@
+<?php
+
+/**
+ * @file
+ * Install hooks for the Mahlzeit Vocabulary module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function mahlzeit_vocabulary_schema(): array {
+  return [
+    'mahlzeit_vocabulary_item' => [
+      'description' => 'German vocabulary items shown on the public Vocabulary page.',
+      'fields' => [
+        'id' => [
+          'type' => 'serial',
+          'not null' => TRUE,
+        ],
+        'level' => [
+          'type' => 'varchar',
+          'length' => 20,
+          'not null' => TRUE,
+          'default' => 'ALL',
+        ],
+        'title' => [
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => TRUE,
+        ],
+        'part_of_speech' => [
+          'type' => 'varchar',
+          'length' => 80,
+          'not null' => FALSE,
+        ],
+        'description' => [
+          'type' => 'text',
+          'size' => 'big',
+          'not null' => FALSE,
+        ],
+        'pronunciation' => [
+          'type' => 'text',
+          'size' => 'medium',
+          'not null' => FALSE,
+        ],
+        'is_active' => [
+          'type' => 'int',
+          'size' => 'tiny',
+          'not null' => TRUE,
+          'default' => 1,
+        ],
+        'sort_order' => [
+          'type' => 'int',
+          'not null' => TRUE,
+          'default' => 0,
+        ],
+        'published_date' => [
+          'type' => 'varchar',
+          'length' => 10,
+          'not null' => FALSE,
+        ],
+        'created' => [
+          'type' => 'int',
+          'not null' => TRUE,
+          'default' => 0,
+        ],
+        'changed' => [
+          'type' => 'int',
+          'not null' => TRUE,
+          'default' => 0,
+        ],
+      ],
+      'primary key' => ['id'],
+      'unique keys' => [
+        'title' => ['title'],
+      ],
+      'indexes' => [
+        'active_order' => ['is_active', 'sort_order', 'created'],
+        'published_date' => ['published_date'],
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_install().
+ */
+function mahlzeit_vocabulary_install(): void {
+  $now = time();
+  $today = date('Y-m-d', $now);
+  $defaults = [
+    [
+      'level' => 'B2',
+      'title' => 'Aufbruch',
+      'part_of_speech' => 'Substantiv',
+      'description' => 'Ein neuer Anfang oder der Beginn einer Reise und Veränderung.',
+      'pronunciation' => 'der Aufbruch',
+    ],
+    [
+      'level' => 'B1',
+      'title' => 'zuverlässig',
+      'part_of_speech' => 'Adjektiv',
+      'description' => 'So, dass man sich auf jemanden oder etwas verlassen kann.',
+      'pronunciation' => 'zu-ver-läs-sig',
+    ],
+    [
+      'level' => 'B1',
+      'title' => 'begegnen',
+      'part_of_speech' => 'Verb',
+      'description' => 'Jemanden treffen oder mit jemandem in Kontakt kommen.',
+      'pronunciation' => 'be-geg-nen',
+    ],
+    [
+      'level' => 'A2',
+      'title' => 'die Gewohnheit',
+      'part_of_speech' => 'Substantiv',
+      'description' => 'Etwas, das man regelmäßig tut und das dadurch vertraut wird.',
+      'pronunciation' => 'die Ge-wohn-heit',
+    ],
+  ];
+
+  foreach ($defaults as $index => $item) {
+    \Drupal::database()->insert('mahlzeit_vocabulary_item')
+      ->fields([
+        ...$item,
+        'is_active' => 1,
+        'sort_order' => $index,
+        'published_date' => $today,
+        'created' => $now - (count($defaults) - $index),
+        'changed' => $now,
+      ])
+      ->execute();
+  }
+}

@@ -1,0 +1,5 @@
+name: Mahlzeit News
+type: module
+description: 'Imports German news from Tagesschau and presents it as learning content.'
+package: Custom
+core_version_requirement: '^11'

@@ -1,0 +1,103 @@
+<section class="vocabulary-page">
+  <div class="container">
+    <header class="vocabulary-hero">
+      <div class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>{{ 'Build your German vocabulary'|t }}</div>
+      <h1>{{ 'One useful word at a time.'|t }}</h1>
+      <p>{{ 'Learn practical German with a daily word, clear meanings and lightweight flashcards you can revisit at your own pace.'|t }}</p>
+    </header>
+
+    {% if today %}
+      <section class="vocabulary-today" aria-labelledby="vocabulary-today-title">
+        <div class="vocabulary-today__intro">
+          <span class="vocabulary-today__icon" aria-hidden="true">✦</span>
+          <div>
+            <span class="vocabulary-kicker">{{ 'Today’s vocabulary'|t }}</span>
+            <h2 id="vocabulary-today-title">{{ 'A word worth keeping.'|t }}</h2>
+            <p>{{ 'Start here, then turn the card library into a small daily habit.'|t }}</p>
+          </div>
+        </div>
+        <article class="vocabulary-today__card" dir="ltr">
+          <div class="vocabulary-card-meta">
+            <span class="vocabulary-level">{{ today.level }}</span>
+            {% if today.published_date %}<time datetime="{{ today.published_date }}">{{ today.published_date }}</time>{% endif %}
+          </div>
+          <div class="vocabulary-wordline">
+            <span class="vocabulary-part">{{ today.part_of_speech ?: 'Word'|t }}</span>
+            <h3>{{ today.title }}</h3>
+          </div>
+          {% if today.pronunciation %}<p class="vocabulary-pronunciation">{{ today.pronunciation }}</p>{% endif %}
+          <p class="vocabulary-meaning">{{ today.description }}</p>
+        </article>
+      </section>
+    {% endif %}
+
+    {% if items %}
+      <section class="vocabulary-library" data-vocabulary-app aria-labelledby="vocabulary-library-title">
+        <div class="vocabulary-library__header">
+          <div>
+            <span class="vocabulary-kicker">{{ 'Keep going'|t }}</span>
+            <h2 id="vocabulary-library-title">{{ 'Your vocabulary library.'|t }}</h2>
+            <p>{{ count }} {{ count == 1 ? 'word ready to practise.'|t : 'words ready to practise.'|t }}</p>
+          </div>
+          <div class="vocabulary-switcher" role="group" aria-label="{{ 'Vocabulary view'|t }}">
+            <button type="button" class="is-active" data-vocabulary-view="flashcards" aria-pressed="true">{{ 'Flashcards'|t }}</button>
+            <button type="button" data-vocabulary-view="list" aria-pressed="false">{{ 'List'|t }}</button>
+          </div>
+        </div>
+
+        <div class="vocabulary-flashcards" data-vocabulary-flashcards>
+          {% for item in items %}
+            <article class="vocabulary-flashcard{% if loop.first %} is-current{% endif %}" data-vocabulary-card data-index="{{ loop.index0 }}" tabindex="0" role="button" aria-expanded="false" aria-label="{{ 'Reveal vocabulary word'|t }}: {{ item.title }}"{% if not loop.first %} hidden{% endif %} dir="ltr">
+              <div class="vocabulary-flashcard__inner">
+                <div class="vocabulary-flashcard__face vocabulary-flashcard__front">
+                  <span class="vocabulary-level">{{ item.level }}</span>
+                  <span class="vocabulary-part">{{ item.part_of_speech ?: 'Word'|t }}</span>
+                  <h3>{{ item.title }}</h3>
+                  <span class="vocabulary-flashcard__tip">{{ 'Click to reveal the meaning'|t }} <span aria-hidden="true">↗</span></span>
+                </div>
+                <div class="vocabulary-flashcard__face vocabulary-flashcard__back" aria-hidden="true">
+                  <span class="vocabulary-level">{{ item.level }}</span>
+                  <span class="vocabulary-part">{{ item.part_of_speech ?: 'Word'|t }}</span>
+                  <h3>{{ item.title }}</h3>
+                  <p>{{ item.description }}</p>
+                  {% if item.pronunciation %}<small>{{ item.pronunciation }}</small>{% endif %}
+                  <span class="vocabulary-flashcard__tip">{{ 'Click to turn back'|t }} <span aria-hidden="true">↗</span></span>
+                </div>
+              </div>
+            </article>
+          {% endfor %}
+        </div>
+
+        <div class="vocabulary-flashcard-controls" data-vocabulary-controls>
+          <button type="button" class="vocabulary-arrow" data-vocabulary-prev aria-label="{{ 'Previous word'|t }}">←</button>
+          <div class="vocabulary-progress">
+            <span><strong data-vocabulary-current>1</strong> / <span data-vocabulary-total>{{ count }}</span></span>
+            <span class="vocabulary-progress__track"><span data-vocabulary-progress></span></span>
+          </div>
+          <button type="button" class="vocabulary-arrow" data-vocabulary-next aria-label="{{ 'Next word'|t }}">→</button>
+        </div>
+
+        <div class="vocabulary-list-view" data-vocabulary-list hidden>
+          {% for item in items %}
+            <article class="vocabulary-list-item" dir="ltr">
+              <div class="vocabulary-list-item__top">
+                <span class="vocabulary-level">{{ item.level }}</span>
+                <span class="vocabulary-part">{{ item.part_of_speech ?: 'Word'|t }}</span>
+                {% if loop.first %}<span class="vocabulary-today-badge">{{ 'Today'|t }}</span>{% endif %}
+              </div>
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.description }}</p>
+              {% if item.pronunciation %}<small>{{ item.pronunciation }}</small>{% endif %}
+            </article>
+          {% endfor %}
+        </div>
+      </section>
+    {% else %}
+      <div class="vocabulary-empty-state">
+        <span aria-hidden="true">✦</span>
+        <h2>{{ 'Your vocabulary library is getting ready.'|t }}</h2>
+        <p>{{ 'Come back soon for the first daily German word.'|t }}</p>
+      </div>
+    {% endif %}
+  </div>
+</section>

@@ -1,0 +1,50 @@
+<?php
+
+/**
+ * @file
+ * Public and scheduled vocabulary functionality for Mahlzeit.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function mahlzeit_vocabulary_theme(array $existing, string $type, string $theme, string $path): array {
+  return [
+    'mahlzeit_vocabulary_listing' => [
+      'variables' => [
+        'today' => NULL,
+        'items' => [],
+        'count' => 0,
+      ],
+      'template' => 'vocabulary-listing',
+      'path' => $path . '/templates',
+    ],
+    'mahlzeit_vocabulary_admin' => [
+      'variables' => [
+        'items' => [],
+        'add_url' => '',
+        'sync_url' => '',
+      ],
+      'template' => 'vocabulary-admin',
+      'path' => $path . '/templates',
+    ],
+  ];
+}
+
+/**
+ * Adds the current vocabulary item to the home page preview card.
+ */
+function mahlzeit_vocabulary_preprocess_page(array &$variables): void {
+  if (!empty($variables['is_front'])) {
+    $variables['home_vocabulary'] = \Drupal::service('mahlzeit_vocabulary.vocabulary')->getTodayVocabulary();
+    $variables['#cache']['tags'][] = 'mahlzeit_vocabulary';
+  }
+}
+
+/**
+ * Implements hook_cron().
+ */
+function mahlzeit_vocabulary_cron(): void {
+  // The service throttles Duden requests to one successful sync per day.
+  \Drupal::service('mahlzeit_vocabulary.vocabulary')->syncDuden(FALSE);
+}

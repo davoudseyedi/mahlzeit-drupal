@@ -1,0 +1,81 @@
+<?php
+
+/**
+ * @file
+ * Install hooks for the Mahlzeit News module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function mahlzeit_news_schema(): array {
+  return [
+    'mahlzeit_news_item' => [
+      'description' => 'Cached Tagesschau news items used by the public news page.',
+      'fields' => [
+        'id' => [
+          'type' => 'serial',
+          'not null' => TRUE,
+        ],
+        'category' => [
+          'type' => 'varchar',
+          'length' => 32,
+          'not null' => TRUE,
+        ],
+        'title' => [
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => TRUE,
+        ],
+        'published_at' => [
+          'type' => 'int',
+          'not null' => FALSE,
+          'default' => 0,
+        ],
+        'description' => [
+          'type' => 'text',
+          'size' => 'big',
+          'not null' => FALSE,
+        ],
+        'source_url' => [
+          'type' => 'varchar',
+          'length' => 700,
+          'not null' => TRUE,
+        ],
+        'video_url' => [
+          'type' => 'varchar',
+          'length' => 1000,
+          'not null' => FALSE,
+        ],
+        'audio_url' => [
+          'type' => 'varchar',
+          'length' => 1000,
+          'not null' => FALSE,
+        ],
+        'important_words' => [
+          'type' => 'text',
+          'size' => 'big',
+          'not null' => FALSE,
+        ],
+        'created' => [
+          'type' => 'int',
+          'not null' => TRUE,
+          'default' => 0,
+        ],
+        'changed' => [
+          'type' => 'int',
+          'not null' => TRUE,
+          'default' => 0,
+        ],
+      ],
+      'primary key' => ['id'],
+      'unique keys' => [
+        'source_url' => ['source_url'],
+      ],
+      'indexes' => [
+        'category' => ['category'],
+        'published_at' => ['published_at'],
+      ],
+    ],
+  ];
+}

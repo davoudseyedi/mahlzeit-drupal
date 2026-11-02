@@ -1,0 +1,25 @@
+.logo-mark {
+  display: block;
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
+  border-radius: 0;
+  background: transparent;
+  object-fit: contain;
+}
+
+.site-logo--footer .logo-mark {
+  flex-basis: 42px;
+  width: 42px;
+  height: 42px;
+}
+
+.auth-card__mark {
+  display: block;
+  flex: 0 0 28px;
+  width: 28px;
+  height: 28px;
+  border-radius: 0;
+  background: transparent;
+  object-fit: contain;
+}

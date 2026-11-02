@@ -1,0 +1,11 @@
+services:
+  mahlzeit_homepage.data:
+    class: Drupal\mahlzeit_homepage\Service\HomepageService
+    arguments:
+      - '@http_client'
+      - '@cache.data'
+      - '@logger.factory'
+      - '@entity_type.manager'
+      - '@date.formatter'
+      - '@mahlzeit_news.news'
+      - '@mahlzeit_vocabulary.vocabulary'

@@ -1,0 +1,15 @@
+mahlzeit_blog.blog:
+  title: 'Blog'
+  description: 'German learning articles and practical tips.'
+  route_name: mahlzeit_blog.list
+  menu_name: main
+  weight: 10
+
+mahlzeit_blog.add:
+  title: 'Add blog post'
+  description: 'Create a new Mahlzeit blog post.'
+  route_name: node.add
+  route_parameters:
+    node_type: blog
+  parent: system.admin_content
+  weight: 10

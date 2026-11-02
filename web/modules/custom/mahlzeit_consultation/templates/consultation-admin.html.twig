@@ -1,0 +1,38 @@
+<div class="consultation-admin-page">
+  {% if requests %}
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>{{ 'Received'|t }}</th>
+            <th>{{ 'Name'|t }}</th>
+            <th>{{ 'Contact'|t }}</th>
+            <th>{{ 'Level'|t }}</th>
+            <th>{{ 'Preference'|t }}</th>
+            <th>{{ 'Message'|t }}</th>
+            <th>{{ 'Status'|t }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for request in requests %}
+            <tr>
+              <td>{{ request.created|date('M d, Y · H:i') }}</td>
+              <td><strong>{{ request.name }}</strong></td>
+              <td><a href="mailto:{{ request.email }}">{{ request.email }}</a>{% if request.phone %}<br><small>{{ request.phone }}</small>{% endif %}</td>
+              <td>{{ request.level ?: '—' }}</td>
+              <td>{{ request.preferred_contact ?: '—' }}{% if request.preferred_time %}<br><small>{{ request.preferred_time }}</small>{% endif %}</td>
+              <td class="consultation-admin-message">{{ request.message }}</td>
+              <td><span class="consultation-status">{{ request.status|capitalize }}</span></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% else %}
+    <div class="consultation-admin-empty">
+      <span aria-hidden="true">✦</span>
+      <h2>{{ 'No consultation requests yet.'|t }}</h2>
+      <p>{{ 'New requests submitted from the public form will appear here.'|t }}</p>
+    </div>
+  {% endif %}
+</div>

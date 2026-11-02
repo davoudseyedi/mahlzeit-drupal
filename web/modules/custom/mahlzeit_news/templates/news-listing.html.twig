@@ -1,0 +1,49 @@
+<section class="news-page">
+  <div class="container">
+    <header class="news-hero">
+      <div class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>{{ 'Learn from what is happening around you'|t }}</div>
+      <h1>{{ 'German news, made practical.'|t }}</h1>
+      <p>{{ 'Read current stories from Germany, build useful vocabulary and keep your German connected to real life.'|t }} <a href="https://www.tagesschau.de/" target="_blank" rel="noopener noreferrer">Tagesschau</a></p>
+    </header>
+
+    <div class="news-filters">
+      <nav class="news-filter-group" aria-label="{{ 'News categories'|t }}">
+        {% for filter in categories %}
+          <a class="news-filter{% if filter.active %} is-active{% endif %}" href="{{ filter.url }}">{{ filter.label }}</a>
+        {% endfor %}
+      </nav>
+      <nav class="news-filter-group news-filter-group--dates" aria-label="{{ 'News date filters'|t }}">
+        {% for filter in date_filters %}
+          <a class="news-filter{% if filter.active %} is-active{% endif %}" href="{{ filter.url }}">{{ filter.label }}</a>
+        {% endfor %}
+      </nav>
+    </div>
+
+    {% if items %}
+      <div class="news-list">
+        {% for item in items %}
+          <article class="news-card news-card--{{ item.tone }}">
+            <div class="news-card__meta">
+              <span>{{ item.category_label }}</span>
+              <time datetime="{{ item.date_iso }}">{{ item.date }}</time>
+            </div>
+            <h2><a href="{{ item.detail_url }}">{{ item.title }}</a></h2>
+            {% if item.description %}<p>{{ item.description }}</p>{% endif %}
+            <div class="news-card__footer">
+              <a class="news-card__link" href="{{ item.detail_url }}">{{ 'Read and learn'|t }} <span aria-hidden="true">→</span></a>
+              {% if item.video_url or item.audio_url %}<span class="news-card__media-label">{{ item.video_url ? 'Video'|t : 'Audio'|t }}</span>{% endif %}
+              <a class="news-card__source" href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ 'Open source'|t }} ↗</a>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+      <div class="news-pager">{{ pager }}</div>
+    {% else %}
+      <div class="news-empty-state">
+        <span class="news-empty-state__icon" aria-hidden="true">✦</span>
+        <h2>{{ 'No news in this view yet.'|t }}</h2>
+        <p>{{ 'The feed may be temporarily unavailable. Please try again in a moment.'|t }}</p>
+      </div>
+    {% endif %}
+  </div>
+</section>

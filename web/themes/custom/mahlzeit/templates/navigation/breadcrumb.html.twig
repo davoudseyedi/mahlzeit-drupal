@@ -1,0 +1,1 @@
+{% if breadcrumb %}<nav class="breadcrumb" aria-label="{{ 'Breadcrumb'|t }}"><ol>{% for item in breadcrumb %}<li>{% if item.url %}<a href="{{ item.url }}">{{ item.text }}</a>{% else %}{{ item.text }}{% endif %}</li>{% endfor %}</ol></nav>{% endif %}

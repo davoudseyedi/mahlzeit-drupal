@@ -1,0 +1,10 @@
+name: Mahlzeit Homepage
+type: module
+description: 'Builds the public homepage from live app data and the latest learning content.'
+package: Custom
+core_version_requirement: '^11'
+dependencies:
+  - drupal:node
+  - mahlzeit_blog:mahlzeit_blog
+  - mahlzeit_news:mahlzeit_news
+  - mahlzeit_vocabulary:mahlzeit_vocabulary

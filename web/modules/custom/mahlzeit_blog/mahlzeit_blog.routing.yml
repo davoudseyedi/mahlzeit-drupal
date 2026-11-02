@@ -1,0 +1,7 @@
+mahlzeit_blog.list:
+  path: '/blog'
+  defaults:
+    _controller: '\Drupal\mahlzeit_blog\Controller\BlogController::listing'
+    _title: 'Blog'
+  requirements:
+    _permission: 'access content'

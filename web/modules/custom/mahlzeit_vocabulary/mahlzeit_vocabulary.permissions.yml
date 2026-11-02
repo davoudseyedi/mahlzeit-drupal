@@ -1,0 +1,4 @@
+administer mahlzeit vocabulary:
+  title: 'Administer Mahlzeit vocabulary'
+  description: 'Manage public vocabulary entries and synchronize the Duden word of the day.'
+  restrict access: true

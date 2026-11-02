@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Categories
+vid: blog_category
+description: 'Use categories to organize Mahlzeit blog articles by theme.'
+weight: 0
+new_revision: false

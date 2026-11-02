@@ -1,0 +1,27 @@
+global:
+  css:
+    base:
+      css/base/reset.css: {}
+      css/base/tokens.css: {}
+      css/base/base.css: {}
+    component:
+      css/components/components.css: {}
+      css/components/branding.css: {}
+      css/layout/layout.css: {}
+      css/pages/pages.css: {}
+      css/pages/news.css: {}
+      css/pages/vocabulary.css: {}
+      css/pages/home-vocabulary.css: {}
+      css/pages/consultation.css: {}
+      css/pages/blog-detail.css: {}
+      css/pages/footer.css: {}
+      css/pages/osd-home.css: {}
+  dependencies:
+    - core/normalize
+
+marketing:
+  js:
+    js/mahlzeit.js: {}
+  dependencies:
+    - core/drupal
+    - core/once

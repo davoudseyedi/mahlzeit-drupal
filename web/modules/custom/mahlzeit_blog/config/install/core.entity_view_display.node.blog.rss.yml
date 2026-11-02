@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.blog.field_blog_body
+    - field.field.node.blog.field_blog_category
+    - field.field.node.blog.field_blog_hero
+    - field.field.node.blog.field_blog_tags
+    - node.type.blog
+  module:
+    - text
+id: node.blog.rss
+targetEntityType: node
+bundle: blog
+mode: rss
+content:
+  field_blog_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_blog_category: true
+  field_blog_hero: true
+  field_blog_tags: true

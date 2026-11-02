@@ -1,0 +1,4 @@
+administer mahlzeit news:
+  title: 'Administer Mahlzeit news'
+  description: 'Manually synchronize the Mahlzeit news feed.'
+  restrict access: true

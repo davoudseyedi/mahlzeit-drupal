@@ -1,0 +1,35 @@
+<section class="news-page news-page--detail">
+  <div class="container">
+    <article class="news-detail">
+      <a class="news-back-link" href="{{ item.back_url }}">← {{ 'Back to all news'|t }}</a>
+      <header class="news-detail__header">
+        <div class="news-card__meta"><span>{{ item.category_label }}</span><time datetime="{{ item.date_iso }}">{{ item.date }}</time></div>
+        <h1>{{ item.title }}</h1>
+      </header>
+
+      {% if item.description %}<p class="news-detail__description">{{ item.description }}</p>{% endif %}
+
+      {% if item.video_url %}
+        <video class="news-detail__video" controls preload="metadata" src="{{ item.video_url }}"></video>
+      {% elseif item.audio_url %}
+        <audio class="news-detail__audio" controls preload="metadata" src="{{ item.audio_url }}"></audio>
+      {% endif %}
+
+      {% if item.important_words %}
+        <section class="news-words" aria-labelledby="news-words-title">
+          <h2 id="news-words-title">{{ 'Important words'|t }}</h2>
+          <dl>
+            {% for word in item.important_words %}
+              <div class="news-word"><dt>{{ word.word }}</dt><dd>{{ word.explanation }}</dd></div>
+            {% endfor %}
+          </dl>
+        </section>
+      {% endif %}
+
+      <footer class="news-detail__footer">
+        <span>{{ 'Source: Tagesschau'|t }}</span>
+        <a class="button button--small" href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ 'Open original article'|t }} ↗</a>
+      </footer>
+    </article>
+  </div>
+</section>

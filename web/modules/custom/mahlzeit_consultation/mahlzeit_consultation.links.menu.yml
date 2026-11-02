@@ -1,0 +1,6 @@
+mahlzeit_consultation.admin:
+  title: 'Consultation requests'
+  description: 'Review requests submitted through the consultation form.'
+  route_name: mahlzeit_consultation.admin
+  parent: system.admin_content
+  weight: 20

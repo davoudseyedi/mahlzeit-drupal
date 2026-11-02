@@ -1,0 +1,21 @@
+# Composer dependencies and Drupal core are restored by Composer.
+/vendor/
+/web/core/
+
+# Site-specific settings may contain database credentials and secrets.
+/web/sites/*/*settings*.php
+!/web/sites/*/default.settings.php
+/web/sites/*/*services*.yml
+!/web/sites/*/default.services.yml
+
+# User uploads, generated aggregates, caches and local config exports.
+/web/sites/*/files/*
+!/web/sites/*/files/.htaccess
+/web/sites/*/private/
+
+# Local development and IDE files.
+/.idea/
+/.env
+/.env.*
+!/.env.example
+.DS_Store

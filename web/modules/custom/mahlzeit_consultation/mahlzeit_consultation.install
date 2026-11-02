@@ -1,0 +1,79 @@
+<?php
+
+/**
+ * @file
+ * Install hooks for the Mahlzeit Consultation module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function mahlzeit_consultation_schema(): array {
+  return [
+    'mahlzeit_consultation_request' => [
+      'description' => 'Consultation requests submitted through the public Mahlzeit form.',
+      'fields' => [
+        'id' => [
+          'type' => 'serial',
+          'not null' => TRUE,
+        ],
+        'name' => [
+          'type' => 'varchar',
+          'length' => 160,
+          'not null' => TRUE,
+        ],
+        'email' => [
+          'type' => 'varchar',
+          'length' => 254,
+          'not null' => TRUE,
+        ],
+        'phone' => [
+          'type' => 'varchar',
+          'length' => 60,
+          'not null' => FALSE,
+        ],
+        'level' => [
+          'type' => 'varchar',
+          'length' => 20,
+          'not null' => FALSE,
+        ],
+        'preferred_contact' => [
+          'type' => 'varchar',
+          'length' => 20,
+          'not null' => FALSE,
+        ],
+        'preferred_time' => [
+          'type' => 'varchar',
+          'length' => 80,
+          'not null' => FALSE,
+        ],
+        'message' => [
+          'type' => 'text',
+          'size' => 'big',
+          'not null' => FALSE,
+        ],
+        'status' => [
+          'type' => 'varchar',
+          'length' => 20,
+          'not null' => TRUE,
+          'default' => 'new',
+        ],
+        'created' => [
+          'type' => 'int',
+          'not null' => TRUE,
+          'default' => 0,
+        ],
+        'changed' => [
+          'type' => 'int',
+          'not null' => TRUE,
+          'default' => 0,
+        ],
+      ],
+      'primary key' => ['id'],
+      'indexes' => [
+        'status' => ['status'],
+        'created' => ['created'],
+      ],
+    ],
+  ];
+}

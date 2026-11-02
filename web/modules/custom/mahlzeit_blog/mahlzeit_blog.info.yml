@@ -1,0 +1,12 @@
+name: Mahlzeit Blog
+type: module
+description: 'Provides the Mahlzeit blog content type, listing page and navigation links.'
+package: Custom
+core_version_requirement: '^11'
+dependencies:
+  - drupal:file
+  - drupal:image
+  - drupal:menu_ui
+  - drupal:node
+  - drupal:taxonomy
+  - drupal:text

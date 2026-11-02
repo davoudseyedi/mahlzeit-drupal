@@ -1,0 +1,4 @@
+administer mahlzeit consultation requests:
+  title: 'Administer Mahlzeit consultation requests'
+  description: 'View consultation requests submitted through the public form.'
+  restrict access: true

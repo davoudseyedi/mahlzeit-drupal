@@ -1,0 +1,26 @@
+name: Mahlzeit
+type: theme
+base theme: false
+description: 'Custom marketing theme for Mahlzeit, an AI-powered German learning platform.'
+package: Custom
+core_version_requirement: '^11'
+logo: images/mahlzeit-mark.svg
+libraries:
+  - mahlzeit/global
+  - mahlzeit/marketing
+regions:
+  announcement: Announcement
+  header: Header
+  primary_menu: Primary menu
+  header_cta: Header CTA
+  breadcrumb: Breadcrumb
+  highlighted: Highlighted
+  content: Content
+  content_above: Content above
+  sidebar: Sidebar
+  footer_product: Footer - Product
+  footer_learn: Footer - Learn
+  footer_resources: Footer - Resources
+  footer_company: Footer - Company
+  footer_legal: Footer - Legal
+  footer_bottom: Footer bottom

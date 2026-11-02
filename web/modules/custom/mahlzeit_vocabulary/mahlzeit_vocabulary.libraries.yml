@@ -1,0 +1,6 @@
+flashcards:
+  js:
+    js/vocabulary.js: {}
+  dependencies:
+    - core/drupal
+    - core/once

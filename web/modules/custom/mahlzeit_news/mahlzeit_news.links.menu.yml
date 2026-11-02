@@ -1,0 +1,12 @@
+mahlzeit_news.list:
+  title: 'News'
+  description: 'German news for your learning routine.'
+  route_name: mahlzeit_news.list
+  menu_name: main
+  weight: 5
+
+mahlzeit_news.admin:
+  title: 'Mahlzeit News'
+  description: 'Synchronize the Tagesschau news feed.'
+  route_name: mahlzeit_news.admin
+  parent: system.admin_config_content

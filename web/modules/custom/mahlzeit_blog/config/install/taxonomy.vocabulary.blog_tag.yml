@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Tags
+vid: blog_tag
+description: 'Use tags to describe the topics and skills covered in a blog article.'
+weight: 1
+new_revision: false

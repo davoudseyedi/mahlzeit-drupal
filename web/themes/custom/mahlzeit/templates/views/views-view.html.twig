@@ -1,0 +1,1 @@
+<div{{ attributes.addClass('view', 'view-' ~ id|clean_class) }}>{{ title_prefix }}{% if title %}<h2>{{ title }}</h2>{% endif %}{{ title_suffix }}{{ exposed }}{{ attachment_before }}{% if rows %}{{ rows }}{% elseif empty %}<div class="empty-state">{{ empty }}</div>{% endif %}{{ pager }}{{ attachment_after }}{{ more }}{{ feed_icons }}</div>

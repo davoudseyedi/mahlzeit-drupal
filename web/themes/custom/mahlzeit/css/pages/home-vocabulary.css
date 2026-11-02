@@ -1,0 +1,22 @@
+/* Compact vocabulary preview used on the home page ----------------------- */
+.home-vocab-card{display:flex;flex-direction:column;min-height:249px}
+.home-vocab-card__top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.home-vocab-card__top small{color:var(--green-dark);font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.home-vocab-card .vocab-word{margin-top:25px}
+.home-vocab-card .article-tag{max-width:92px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.home-vocab-card>p{display:-webkit-box;overflow:hidden;line-height:1.55;-webkit-box-orient:vertical;-webkit-line-clamp:3}
+.home-vocab-card .text-link{margin-top:auto}
+.home-vocabulary-strip{padding:24px 0;border-block:1px solid #dcebdd;background:linear-gradient(90deg,#eef9ef 0%,#fffdf1 100%)}
+.home-vocabulary-card{display:grid;grid-template-columns:.7fr 1.3fr;align-items:center;gap:28px;padding:20px 24px;border:1px solid #d5e8d7;border-radius:var(--radius-lg);background:#fff;color:var(--text);text-decoration:none;box-shadow:0 10px 26px rgba(21,63,34,.06)}
+.home-vocabulary-card:hover{border-color:#9dcc9f;box-shadow:0 14px 30px rgba(21,63,34,.1)}
+.home-vocabulary-card__label{display:flex;align-items:center;gap:10px;color:var(--green-dark);font-size:11px;font-weight:850;letter-spacing:.1em;text-transform:uppercase}
+.home-vocabulary-card__label>span{display:grid;place-items:center;width:32px;height:32px;border-radius:10px;background:var(--green);color:var(--yellow);font-size:17px}
+.home-vocabulary-card__content{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px}
+.home-vocabulary-card__word{display:flex;align-items:baseline;gap:10px;white-space:nowrap}
+.home-vocabulary-card__word strong{font-size:28px;line-height:1;letter-spacing:-.06em}
+.home-vocabulary-card__word .vocabulary-part{color:var(--green);font-size:11px;font-weight:800}
+.home-vocabulary-card__content p{display:-webkit-box;overflow:hidden;margin:0;color:var(--muted);font-size:13px;line-height:1.45;-webkit-box-orient:vertical;-webkit-line-clamp:2}
+.home-vocabulary-card__link{color:var(--green);font-size:12px;font-weight:850;white-space:nowrap}
+.preview-grid--two{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:900px){.home-vocabulary-card{grid-template-columns:1fr;gap:15px}.home-vocabulary-card__content{grid-template-columns:auto 1fr}.home-vocabulary-card__link{grid-column:2}}
+@media (max-width:580px){.home-vocabulary-card{padding:18px}.home-vocabulary-card__content{grid-template-columns:1fr;align-items:start}.home-vocabulary-card__word{white-space:normal}.home-vocabulary-card__link{grid-column:auto}.preview-grid--two{grid-template-columns:1fr}}

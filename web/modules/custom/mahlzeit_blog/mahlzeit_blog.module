@@ -1,0 +1,106 @@
+<?php
+
+/**
+ * @file
+ * Custom blog functionality for Mahlzeit.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function mahlzeit_blog_theme(array $existing, string $type, string $theme, string $path): array {
+  return [
+    'mahlzeit_blog_listing' => [
+      'variables' => [
+        'posts' => [],
+        'pager' => NULL,
+        'can_create' => FALSE,
+        'create_url' => '',
+      ],
+      'template' => 'blog-listing',
+      'path' => $path . '/templates',
+    ],
+  ];
+}
+
+/**
+ * Creates a readable alias for new blog nodes.
+ */
+function mahlzeit_blog_node_insert(\Drupal\node\NodeInterface $node): void {
+  mahlzeit_blog_ensure_alias($node);
+}
+
+/**
+ * Adds an alias when an existing blog node does not have one yet.
+ */
+function mahlzeit_blog_node_update(\Drupal\node\NodeInterface $node): void {
+  mahlzeit_blog_ensure_alias($node);
+}
+
+/**
+ * Backfills aliases for blog posts when database updates are run.
+ */
+function mahlzeit_blog_update_11001(): void {
+  $storage = \Drupal::entityTypeManager()->getStorage('node');
+  $nids = $storage->getQuery()
+    ->accessCheck(FALSE)
+    ->condition('type', 'blog')
+    ->execute();
+
+  foreach ($storage->loadMultiple($nids) as $node) {
+    mahlzeit_blog_ensure_alias($node);
+  }
+}
+
+/**
+ * Ensures a blog node has a unique /blog/{machine-name} alias.
+ */
+function mahlzeit_blog_ensure_alias(\Drupal\node\NodeInterface $node): void {
+  if ($node->bundle() !== 'blog' || !$node->id()) {
+    return;
+  }
+
+  $langcode = $node->language()->getId();
+  $system_path = '/node/' . (int) $node->id();
+  $storage = \Drupal::entityTypeManager()->getStorage('path_alias');
+  $existing = $storage->loadByProperties([
+    'path' => $system_path,
+    'langcode' => $langcode,
+  ]);
+
+  // Preserve an alias explicitly created by an editor or another module.
+  if ($existing) {
+    return;
+  }
+
+  $base_alias = '/blog/' . mahlzeit_blog_machine_name($node->label(), (int) $node->id());
+  $alias = $base_alias;
+  $suffix = 2;
+  while ($storage->loadByProperties(['alias' => $alias, 'langcode' => $langcode])) {
+    $alias = $base_alias . '-' . $suffix++;
+  }
+
+  $storage->create([
+    'path' => $system_path,
+    'alias' => $alias,
+    'langcode' => $langcode,
+    'status' => 1,
+  ])->save();
+}
+
+/**
+ * Converts a blog title into a stable URL-safe machine name.
+ */
+function mahlzeit_blog_machine_name(string $title, int $id = 0): string {
+  $value = trim($title);
+  if (function_exists('iconv')) {
+    $transliterated = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $value);
+    if ($transliterated !== FALSE) {
+      $value = $transliterated;
+    }
+  }
+
+  $value = strtolower((string) preg_replace('/[^a-z0-9]+/i', '-', $value));
+  $value = trim($value, '-');
+  return $value !== '' ? substr($value, 0, 220) : 'post-' . $id;
+}

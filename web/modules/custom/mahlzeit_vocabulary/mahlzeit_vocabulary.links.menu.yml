@@ -1,0 +1,13 @@
+mahlzeit_vocabulary.list:
+  title: 'Vocabulary'
+  description: 'Practice useful German vocabulary with daily words and flashcards.'
+  route_name: mahlzeit_vocabulary.list
+  menu_name: main
+  weight: 7
+
+mahlzeit_vocabulary.admin:
+  title: 'Mahlzeit Vocabulary'
+  description: 'Manage the public vocabulary library.'
+  route_name: mahlzeit_vocabulary.admin
+  parent: system.admin_content
+  weight: 15

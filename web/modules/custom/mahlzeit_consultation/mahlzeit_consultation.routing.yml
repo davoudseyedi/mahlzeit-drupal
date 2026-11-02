@@ -1,0 +1,17 @@
+mahlzeit_consultation.form:
+  path: '/consultation'
+  defaults:
+    _controller: '\Drupal\mahlzeit_consultation\Controller\ConsultationController::form'
+    _title: 'Request a consultation'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: true
+
+mahlzeit_consultation.admin:
+  path: '/admin/content/consultation-requests'
+  defaults:
+    _controller: '\Drupal\mahlzeit_consultation\Controller\ConsultationAdminController::listing'
+    _title: 'Consultation requests'
+  requirements:
+    _permission: 'administer mahlzeit consultation requests'

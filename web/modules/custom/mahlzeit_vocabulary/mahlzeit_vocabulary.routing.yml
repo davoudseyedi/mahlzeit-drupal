@@ -1,0 +1,51 @@
+mahlzeit_vocabulary.list:
+  path: '/vokabeln'
+  defaults:
+    _controller: '\Drupal\mahlzeit_vocabulary\Controller\VocabularyController::listing'
+    _title: 'Vocabulary'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: true
+
+mahlzeit_vocabulary.admin:
+  path: '/admin/content/mahlzeit-vocabulary'
+  defaults:
+    _controller: '\Drupal\mahlzeit_vocabulary\Controller\VocabularyAdminController::listing'
+    _title: 'Mahlzeit Vocabulary'
+  requirements:
+    _permission: 'administer mahlzeit vocabulary'
+
+mahlzeit_vocabulary.add:
+  path: '/admin/content/mahlzeit-vocabulary/add'
+  defaults:
+    _form: '\Drupal\mahlzeit_vocabulary\Form\VocabularyForm'
+    _title: 'Add vocabulary item'
+  requirements:
+    _permission: 'administer mahlzeit vocabulary'
+
+mahlzeit_vocabulary.edit:
+  path: '/admin/content/mahlzeit-vocabulary/{vocabulary_id}/edit'
+  defaults:
+    _form: '\Drupal\mahlzeit_vocabulary\Form\VocabularyForm'
+    _title: 'Edit vocabulary item'
+  requirements:
+    _permission: 'administer mahlzeit vocabulary'
+    vocabulary_id: '\d+'
+
+mahlzeit_vocabulary.delete:
+  path: '/admin/content/mahlzeit-vocabulary/{vocabulary_id}/delete'
+  defaults:
+    _form: '\Drupal\mahlzeit_vocabulary\Form\VocabularyDeleteForm'
+    _title: 'Delete vocabulary item'
+  requirements:
+    _permission: 'administer mahlzeit vocabulary'
+    vocabulary_id: '\d+'
+
+mahlzeit_vocabulary.sync:
+  path: '/admin/content/mahlzeit-vocabulary/sync-duden'
+  defaults:
+    _form: '\Drupal\mahlzeit_vocabulary\Form\DudenSyncForm'
+    _title: 'Synchronize Duden vocabulary'
+  requirements:
+    _permission: 'administer mahlzeit vocabulary'

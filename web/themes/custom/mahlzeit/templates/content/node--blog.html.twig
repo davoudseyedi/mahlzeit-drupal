@@ -1,0 +1,36 @@
+<article{{ attributes.addClass('node', 'node--blog') }}>
+  <div class="blog-article">
+    <header class="blog-article__header">
+      <div class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>{{ 'Mahlzeit blog'|t }}</div>
+      {{ title_prefix }}
+      {% if label %}<h1{{ title_attributes }}>{{ label }}</h1>{% endif %}
+      {{ title_suffix }}
+      <div class="blog-article__meta">
+        <span>{{ 'German learning'|t }}</span>
+        {% if date %}<time datetime="{{ node.getCreatedTime()|date('c') }}">{{ date }}</time>{% endif %}
+      </div>
+    </header>
+
+    {% set has_hero = node.field_blog_hero|length > 0 and node.field_blog_hero.0.target_id %}
+    {% set has_category = node.field_blog_category is defined and not node.field_blog_category.isEmpty() %}
+    {% set has_tags = node.field_blog_tags is defined and not node.field_blog_tags.isEmpty() %}
+    {% if has_category or has_tags %}
+      <div class="blog-article__taxonomy">
+        {% if has_category %}<div class="blog-article__category">{{ content.field_blog_category }}</div>{% endif %}
+        {% if has_tags %}<div class="blog-article__tags">{{ content.field_blog_tags }}</div>{% endif %}
+      </div>
+    {% endif %}
+
+    {% if has_hero %}
+      <div class="blog-article__hero">{{ content.field_blog_hero }}</div>
+    {% endif %}
+
+    <div class="blog-article__body">
+      {{ content.field_blog_body }}
+    </div>
+
+    <footer class="blog-article__footer">
+      <a class="text-link" href="{{ path('mahlzeit_blog.list') }}">← {{ 'Back to all articles'|t }}</a>
+    </footer>
+  </div>
+</article>

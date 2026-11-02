@@ -1,0 +1,9 @@
+services:
+  mahlzeit_vocabulary.vocabulary:
+    class: Drupal\mahlzeit_vocabulary\Service\VocabularyService
+    arguments:
+      - '@database'
+      - '@http_client'
+      - '@state'
+      - '@logger.factory'
+      - '@cache_tags.invalidator'

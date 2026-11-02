@@ -1,0 +1,5 @@
+services:
+  mahlzeit_consultation.consultation:
+    class: Drupal\mahlzeit_consultation\Service\ConsultationService
+    arguments:
+      - '@database'

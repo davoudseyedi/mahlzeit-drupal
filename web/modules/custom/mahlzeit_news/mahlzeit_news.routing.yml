@@ -1,0 +1,33 @@
+mahlzeit_news.list:
+  path: '/news'
+  defaults:
+    _controller: '\Drupal\mahlzeit_news\Controller\NewsController::listing'
+    _title: 'News'
+  requirements:
+    _permission: 'access content'
+
+mahlzeit_news.detail:
+  path: '/news/{news_slug}'
+  defaults:
+    _controller: '\Drupal\mahlzeit_news\Controller\NewsController::detail'
+    _title: 'News'
+  requirements:
+    _permission: 'access content'
+    news_slug: '[a-z][a-z0-9-]*'
+
+mahlzeit_news.detail_legacy:
+  path: '/news/{news_id}'
+  defaults:
+    _controller: '\Drupal\mahlzeit_news\Controller\NewsController::detailLegacy'
+    _title: 'News'
+  requirements:
+    _permission: 'access content'
+    news_id: '\d+'
+
+mahlzeit_news.admin:
+  path: '/admin/config/content/mahlzeit-news'
+  defaults:
+    _form: '\Drupal\mahlzeit_news\Form\NewsSyncForm'
+    _title: 'Mahlzeit News'
+  requirements:
+    _permission: 'administer mahlzeit news'

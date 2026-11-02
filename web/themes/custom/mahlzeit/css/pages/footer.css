@@ -1,0 +1,6 @@
+/* Footer links and trust seal -------------------------------------------- */
+.footer-links{display:grid;gap:8px;list-style:none;margin:0;padding:0}
+.footer-links a{color:#e2e7e3;font-size:13px;text-decoration:none}
+.footer-links a:hover{color:#9ddda9}
+.enamad-badge{display:inline-flex;align-items:center;justify-content:center;min-width:78px;min-height:78px;margin-top:17px;padding:7px;border:1px solid rgba(255,255,255,.16);border-radius:10px;background:#fff;box-shadow:0 8px 20px rgba(0,0,0,.16)}
+.enamad-badge img{display:block;width:64px;height:auto;max-height:64px;object-fit:contain}

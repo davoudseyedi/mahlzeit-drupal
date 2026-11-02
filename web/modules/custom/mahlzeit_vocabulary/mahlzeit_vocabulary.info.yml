@@ -1,0 +1,5 @@
+name: Mahlzeit Vocabulary
+type: module
+description: 'Provides the public vocabulary experience and daily German vocabulary management.'
+package: Custom
+core_version_requirement: '^11'
