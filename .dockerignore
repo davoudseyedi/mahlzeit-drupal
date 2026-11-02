@@ -1,0 +1,14 @@
+.git
+.idea
+.env
+vendor
+web/core
+web/sites/default/settings.php
+web/sites/default/files
+Dockerfile
+docker-compose.yml
+docker-compose.*.yml
+*.sql
+*.sql.gz
+*.tar
+*.tar.gz

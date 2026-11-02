@@ -1,0 +1,46 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_NAME: ${DB_NAME:?DB_NAME must be set}
+      DB_USER: ${DB_USER:?DB_USER must be set}
+      DB_PASSWORD: ${DB_PASSWORD:?DB_PASSWORD must be set}
+      DRUPAL_HASH_SALT: ${DRUPAL_HASH_SALT:?DRUPAL_HASH_SALT must be set}
+      DRUPAL_TRUSTED_HOSTS: ${DRUPAL_TRUSTED_HOSTS:?DRUPAL_TRUSTED_HOSTS must be set}
+      DRUPAL_CONFIG_SYNC_DIRECTORY: ${DRUPAL_CONFIG_SYNC_DIRECTORY:-/var/www/html/config/sync}
+    ports:
+      - "${APP_PORT:-8080}:80"
+    volumes:
+      - drupal_files:/var/www/html/web/sites/default/files
+      - drupal_config:/var/www/html/config/sync
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  db:
+    image: mariadb:10.11
+    environment:
+      MARIADB_DATABASE: ${DB_NAME:?DB_NAME must be set}
+      MARIADB_USER: ${DB_USER:?DB_USER must be set}
+      MARIADB_PASSWORD: ${DB_PASSWORD:?DB_PASSWORD must be set}
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:?DB_ROOT_PASSWORD must be set}
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - mariadb-admin ping -h 127.0.0.1 -u root -p$${MARIADB_ROOT_PASSWORD} --silent
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    restart: unless-stopped
+
+volumes:
+  db_data:
+  drupal_files:
+  drupal_config:
