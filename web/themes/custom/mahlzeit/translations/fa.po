@@ -1,0 +1,587 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Mahlzeit\n"
+"Language: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Mahlzeit home"
+msgstr "صفحه اصلی Mahlzeit"
+
+msgid "Open navigation"
+msgstr "باز کردن منو"
+
+msgid "Close navigation"
+msgstr "بستن منو"
+
+msgid "Skip to main content"
+msgstr "رفتن به محتوای اصلی"
+
+msgid "Main navigation"
+msgstr "منوی اصلی"
+
+msgid "Choose language"
+msgstr "انتخاب زبان"
+
+msgid "Request consultation"
+msgstr "درخواست مشاوره"
+
+msgid "Start learning"
+msgstr "شروع یادگیری"
+
+msgid "Home"
+msgstr "خانه"
+
+msgid "News"
+msgstr "اخبار"
+
+msgid "Vocabulary"
+msgstr "واژگان"
+
+msgid "Blog"
+msgstr "وبلاگ"
+
+msgid "Contact us"
+msgstr "تماس با ما"
+
+msgid "Open the app"
+msgstr "باز کردن اپلیکیشن"
+
+msgid "Privacy"
+msgstr "حریم خصوصی"
+
+msgid "Terms"
+msgstr "شرایط استفاده"
+
+msgid "Imprint"
+msgstr "اطلاعات حقوقی"
+
+msgid "Product"
+msgstr "محصول"
+
+msgid "Learn"
+msgstr "یادگیری"
+
+msgid "Resources"
+msgstr "منابع"
+
+msgid "Company"
+msgstr "شرکت"
+
+msgid "Legal"
+msgstr "حقوقی"
+
+msgid "Learn German. Simply understand."
+msgstr "آلمانی یاد بگیر؛ ساده‌تر بفهم."
+
+msgid "Made for real conversations."
+msgstr "ساخته‌شده برای مکالمه‌های واقعی."
+
+msgid "View Mahlzeit eNAMAD trust seal"
+msgstr "مشاهده نماد اعتماد الکترونیکی Mahlzeit"
+
+msgid "eNAMAD trust seal"
+msgstr "نماد اعتماد الکترونیکی"
+
+msgid "ÖSD PREPARATION"
+msgstr "آمادگی ÖSD"
+
+msgid "Speak German like you are in the real exam."
+msgstr "آلمانی صحبت کن؛ انگار در آزمون واقعی هستی."
+
+msgid "Practise the ÖSD speaking exam with model tests, clear exam parts and an AI examiner at your level."
+msgstr "با آزمون‌های نمونه، بخش‌های روشن آزمون و ممتحن هوش مصنوعی متناسب با سطح خودت برای بخش گفتاری ÖSD تمرین کن."
+
+msgid "Start ÖSD test"
+msgstr "شروع آزمون ÖSD"
+
+msgid "Find your level"
+msgstr "سطحت را پیدا کن"
+
+msgid "A1 free · A2–B2 with a subscription"
+msgstr "A1 رایگان · A2 تا B2 با اشتراک"
+
+msgid "Vorschau auf die ÖSD-Sprechprüfung"
+msgstr "پیش‌نمایش آزمون گفتاری ÖSD"
+
+msgid "ÖSD · SPRECHEN"
+msgstr "ÖSD · گفتاری"
+
+msgid "MODELLTEST 1"
+msgstr "آزمون نمونه ۱"
+
+msgid "Gesundheit"
+msgstr "سلامتی"
+
+msgid "Drei Prüfungsteile"
+msgstr "سه بخش آزمون"
+
+msgid "TEIL 2 · MONOLOG"
+msgstr "بخش ۲ · مونولوگ"
+
+msgid "Bild beschreiben und Meinung äußern"
+msgstr "توصیف تصویر و بیان نظر"
+
+msgid "1 Bild + Meinung"
+msgstr "۱ تصویر + نظر"
+
+msgid "KI-Prüfungsleitung"
+msgstr "هدایت آزمون با هوش مصنوعی"
+
+msgid "ca. 11 Min."
+msgstr "حدود ۱۱ دقیقه"
+
+msgid "Prüfungsteile"
+msgstr "بخش‌های آزمون"
+
+msgid "Abschlussbericht"
+msgstr "گزارش نهایی"
+
+msgid "nach dem Test"
+msgstr "پس از آزمون"
+
+msgid "ÖSD test highlights"
+msgstr "ویژگی‌های آزمون ÖSD"
+
+msgid "4 levels"
+msgstr "۴ سطح"
+
+msgid "A1 to B2"
+msgstr "از A1 تا B2"
+
+msgid "3 exam parts"
+msgstr "۳ بخش آزمون"
+
+msgid "Like the real test"
+msgstr "مثل آزمون واقعی"
+
+msgid "AI examiner"
+msgstr "ممتحن هوش مصنوعی"
+
+msgid "Question by question"
+msgstr "سؤال‌به‌سؤال"
+
+msgid "Final report"
+msgstr "گزارش نهایی"
+
+msgid "Feedback after the test"
+msgstr "بازخورد پس از آزمون"
+
+msgid "Today’s vocabulary"
+msgstr "واژه امروز"
+
+msgid "Word"
+msgstr "واژه"
+
+msgid "Learn how this German word is used."
+msgstr "یاد بگیر این واژه آلمانی چگونه استفاده می‌شود."
+
+msgid "Practise flashcards"
+msgstr "تمرین فلش‌کارت‌ها"
+
+msgid "THE PROCESS"
+msgstr "روند کار"
+
+msgid "One model test. Three real exam parts."
+msgstr "یک آزمون نمونه؛ سه بخش واقعی آزمون."
+
+msgid "Every ÖSD test follows a clear flow. You speak, react and receive feedback afterwards."
+msgstr "هر آزمون ÖSD روند مشخصی دارد. صحبت می‌کنی، واکنش نشان می‌دهی و در پایان بازخورد می‌گیری."
+
+msgid "Introduce yourself"
+msgstr "خودت را معرفی کن"
+
+msgid "Answer personal questions and talk about your everyday life, experience or goals."
+msgstr "به پرسش‌های شخصی پاسخ بده و درباره زندگی روزمره، تجربه‌ها یا هدف‌هایت صحبت کن."
+
+msgid "Introduction"
+msgstr "معرفی"
+
+msgid "Picture & opinion"
+msgstr "تصویر و نظر"
+
+msgid "Describe a picture, tell a picture story or give a short talk—depending on your level."
+msgstr "بسته به سطح خودت، تصویری را توصیف کن، داستان تصویر را بگو یا کوتاه صحبت کن."
+
+msgid "Picture description · monologue · presentation"
+msgstr "توصیف تصویر · مونولوگ · ارائه"
+
+msgid "Take action together"
+msgstr "با هم تصمیم بگیرید"
+
+msgid "Plan, decide and discuss with the AI examiner—always one question at a time."
+msgstr "با ممتحن هوش مصنوعی برنامه‌ریزی، تصمیم‌گیری و گفت‌وگو کن؛ هر بار فقط یک سؤال."
+
+msgid "Dialogue · planning · discussion"
+msgstr "گفت‌وگو · برنامه‌ریزی · بحث"
+
+msgid "MODEL TESTS"
+msgstr "آزمون‌های نمونه"
+
+msgid "Choose your level and start."
+msgstr "سطحت را انتخاب کن و شروع کن."
+
+msgid "Live from the app’s ÖSD catalog: topics, duration and exam parts are loaded from the API."
+msgstr "مستقیم از فهرست ÖSD اپلیکیشن: موضوع‌ها، مدت‌زمان و بخش‌های آزمون از API دریافت می‌شوند."
+
+msgid "Tests"
+msgstr "آزمون"
+
+msgid "ÖSD speaking"
+msgstr "گفتاری ÖSD"
+
+msgid "parts"
+msgstr "بخش"
+
+msgid "Open all tests"
+msgstr "مشاهده همه آزمون‌ها"
+
+msgid "The model tests are loading."
+msgstr "آزمون‌های نمونه در حال بارگذاری هستند."
+
+msgid "Open in the app"
+msgstr "باز کردن در اپلیکیشن"
+
+msgid "PLANS FROM THE APP"
+msgstr "پلن‌های اپلیکیشن"
+
+msgid "Choose the access that fits you."
+msgstr "دسترسی مناسب خودت را انتخاب کن."
+
+msgid "Prices and limits are loaded directly from the current Mahlzeit API."
+msgstr "قیمت‌ها و محدودیت‌ها مستقیماً از API فعلی Mahlzeit دریافت می‌شوند."
+
+msgid "Recommended"
+msgstr "پیشنهاد ما"
+
+msgid "month"
+msgstr "ماه"
+
+msgid "months"
+msgstr "ماه"
+
+msgid "Full access to the learning experience."
+msgstr "دسترسی کامل به تجربه یادگیری."
+
+msgid "minutes per month"
+msgstr "دقیقه در ماه"
+
+msgid "View plan in app"
+msgstr "مشاهده پلن در اپلیکیشن"
+
+msgid "EXAM SIMULATION"
+msgstr "شبیه‌سازی آزمون"
+
+msgid "Speak freely. Get your report."
+msgstr "آزادانه صحبت کن؛ گزارش خودت را بگیر."
+
+msgid "The AI stays in the examiner role, asks one question at a time and does not interrupt you with corrections. Your evaluation comes at the end."
+msgstr "هوش مصنوعی در نقش ممتحن می‌ماند، هر بار یک سؤال می‌پرسد و با اصلاحات حرفت را قطع نمی‌کند. ارزیابی در پایان ارائه می‌شود."
+
+msgid "Clear exam questions, one at a time"
+msgstr "پرسش‌های روشن آزمون، یکی‌یکی"
+
+msgid "No interruptions during the conversation"
+msgstr "بدون قطع کردن مکالمه"
+
+msgid "Evaluation and feedback in the final report"
+msgstr "ارزیابی و بازخورد در گزارش نهایی"
+
+msgid "Open ÖSD test"
+msgstr "باز کردن آزمون ÖSD"
+
+msgid "Speaking report preview"
+msgstr "پیش‌نمایش گزارش گفتاری"
+
+msgid "FINAL REPORT"
+msgstr "گزارش نهایی"
+
+msgid "Overall"
+msgstr "امتیاز کلی"
+
+msgid "Task"
+msgstr "وظیفه"
+
+msgid "Fluency"
+msgstr "روانی گفتار"
+
+msgid "Expression"
+msgstr "بیان"
+
+msgid "Next focus"
+msgstr "تمرکز بعدی"
+
+msgid "Explain your opinion in more detail."
+msgstr "نظرت را با جزئیات بیشتری توضیح بده."
+
+msgid "LATEST NEWS"
+msgstr "آخرین اخبار"
+
+msgid "Learn German with the latest news."
+msgstr "با آخرین اخبار آلمانی یاد بگیر."
+
+msgid "All news"
+msgstr "همه اخبار"
+
+msgid "Read and learn"
+msgstr "بخوان و یاد بگیر"
+
+msgid "LATEST BLOG"
+msgstr "آخرین مطالب وبلاگ"
+
+msgid "Practical ideas for learning German."
+msgstr "ایده‌های کاربردی برای یادگیری آلمانی."
+
+msgid "Go to blog"
+msgstr "رفتن به وبلاگ"
+
+msgid "German learning"
+msgstr "یادگیری آلمانی"
+
+msgid "Read article"
+msgstr "خواندن مطلب"
+
+msgid "YOUR NEXT STEP"
+msgstr "قدم بعدی تو"
+
+msgid "Ready for your next model test?"
+msgstr "برای آزمون نمونه بعدی آماده‌ای؟"
+
+msgid "Choose your level and speak your way through the ÖSD exam."
+msgstr "سطحت را انتخاب کن و در آزمون ÖSD قدم‌به‌قدم صحبت کن."
+
+msgid "Start model tests"
+msgstr "شروع آزمون‌های نمونه"
+
+msgid "Personal consultation"
+msgstr "مشاوره شخصی"
+
+msgid "Fresh from Mahlzeit"
+msgstr "تازه از Mahlzeit"
+
+msgid "The Mahlzeit blog."
+msgstr "وبلاگ Mahlzeit."
+
+msgid "Practical German, learning ideas and stories to help you understand more and speak with confidence."
+msgstr "آلمانی کاربردی، ایده‌های یادگیری و داستان‌هایی برای درک بهتر و صحبت با اعتمادبه‌نفس."
+
+msgid "Filter blog posts by category"
+msgstr "فیلتر مطالب وبلاگ بر اساس دسته‌بندی"
+
+msgid "All categories"
+msgstr "همه دسته‌بندی‌ها"
+
+msgid "Read @title"
+msgstr "خواندن @title"
+
+msgid "Article tags"
+msgstr "برچسب‌های مطلب"
+
+msgid "The next story starts here."
+msgstr "داستان بعدی از اینجا شروع می‌شود."
+
+msgid "No blog posts have been published yet. Check back soon for practical German learning ideas."
+msgstr "هنوز مطلبی منتشر نشده است. برای ایده‌های کاربردی یادگیری آلمانی به‌زودی دوباره سر بزن."
+
+msgid "Create the first post"
+msgstr "ایجاد اولین مطلب"
+
+msgid "Back to all articles"
+msgstr "بازگشت به همه مطالب"
+
+msgid "Learn from what is happening around you"
+msgstr "از اتفاق‌های اطرافت یاد بگیر"
+
+msgid "German news, made practical."
+msgstr "اخبار آلمان، به‌شکل کاربردی."
+
+msgid "Read current stories from Germany, build useful vocabulary and keep your German connected to real life."
+msgstr "خبرهای روز آلمان را بخوان، واژگان کاربردی بساز و آلمانی‌ات را به زندگی واقعی وصل کن."
+
+msgid "News categories"
+msgstr "دسته‌بندی اخبار"
+
+msgid "News date filters"
+msgstr "فیلتر تاریخ اخبار"
+
+msgid "All dates"
+msgstr "همه تاریخ‌ها"
+
+msgid "Today"
+msgstr "امروز"
+
+msgid "Last 7 days"
+msgstr "۷ روز گذشته"
+
+msgid "Last 30 days"
+msgstr "۳۰ روز گذشته"
+
+msgid "Video"
+msgstr "ویدئو"
+
+msgid "Audio"
+msgstr "صوت"
+
+msgid "Open source"
+msgstr "باز کردن منبع"
+
+msgid "No news in this view yet."
+msgstr "هنوز خبری در این نما وجود ندارد."
+
+msgid "The feed may be temporarily unavailable. Please try again in a moment."
+msgstr "ممکن است فید موقتاً در دسترس نباشد. لطفاً کمی بعد دوباره تلاش کن."
+
+msgid "Back to all news"
+msgstr "بازگشت به همه اخبار"
+
+msgid "Important words"
+msgstr "واژه‌های مهم"
+
+msgid "Source: Tagesschau"
+msgstr "منبع: Tagesschau"
+
+msgid "Open original article"
+msgstr "باز کردن مطلب اصلی"
+
+msgid "Build your German vocabulary"
+msgstr "واژگان آلمانی‌ات را بساز"
+
+msgid "One useful word at a time."
+msgstr "هر بار یک واژه کاربردی."
+
+msgid "Learn practical German with a daily word, clear meanings and lightweight flashcards you can revisit at your own pace."
+msgstr "با یک واژه روزانه، معنی‌های روشن و فلش‌کارت‌های ساده، آلمانی کاربردی را با سرعت خودت یاد بگیر."
+
+msgid "A word worth keeping."
+msgstr "واژه‌ای که ارزش به خاطر سپردن دارد."
+
+msgid "Start here, then turn the card library into a small daily habit."
+msgstr "از اینجا شروع کن و کتابخانه کارت‌ها را به عادت روزانه کوچکت تبدیل کن."
+
+msgid "Keep going"
+msgstr "ادامه بده"
+
+msgid "Your vocabulary library."
+msgstr "کتابخانه واژگان تو."
+
+msgid "word ready to practise."
+msgstr "واژه آماده تمرین است."
+
+msgid "words ready to practise."
+msgstr "واژه آماده تمرین هستند."
+
+msgid "Vocabulary view"
+msgstr "نمایش واژگان"
+
+msgid "Flashcards"
+msgstr "فلش‌کارت‌ها"
+
+msgid "List"
+msgstr "فهرست"
+
+msgid "Reveal vocabulary word"
+msgstr "نمایش واژه"
+
+msgid "Click to reveal the meaning"
+msgstr "برای دیدن معنی کلیک کن"
+
+msgid "Click to turn back"
+msgstr "برای برگشتن کلیک کن"
+
+msgid "Previous word"
+msgstr "واژه قبلی"
+
+msgid "Next word"
+msgstr "واژه بعدی"
+
+msgid "Your vocabulary library is getting ready."
+msgstr "کتابخانه واژگان تو در حال آماده شدن است."
+
+msgid "Come back soon for the first daily German word."
+msgstr "به‌زودی برای اولین واژه روزانه آلمانی دوباره سر بزن."
+
+msgid "A little help goes a long way"
+msgstr "کمی کمک، مسیر زیادی را هموار می‌کند"
+
+msgid "Let’s find your next step in German."
+msgstr "بیایید قدم بعدی تو در آلمانی را پیدا کنیم."
+
+msgid "Request a personal consultation and tell us where you want your German to take you. We will come back with a practical recommendation."
+msgstr "برای مشاوره شخصی درخواست بده و بگو می‌خواهی آلمانی تو را به کجا برساند. با یک پیشنهاد کاربردی برمی‌گردیم."
+
+msgid "What we can help with"
+msgstr "در چه زمینه‌ای کمک می‌کنیم"
+
+msgid "Choosing the right learning path"
+msgstr "انتخاب مسیر یادگیری مناسب"
+
+msgid "Building a speaking routine"
+msgstr "ساختن عادت مکالمه"
+
+msgid "Finding the right level and scenarios"
+msgstr "پیدا کردن سطح و موقعیت‌های مناسب"
+
+msgid "No pressure, no complicated placement test — just a useful conversation about your goals."
+msgstr "بدون فشار و آزمون تعیین سطح پیچیده؛ فقط یک گفت‌وگوی مفید درباره هدف‌هایت."
+
+msgid "Request received."
+msgstr "درخواست دریافت شد."
+
+msgid "Thanks — our team will review your request and get back to you using your preferred contact method."
+msgstr "ممنون؛ تیم ما درخواستت را بررسی می‌کند و از راه ارتباطی ترجیحی‌ات با تو تماس می‌گیرد."
+
+msgid "Back to home"
+msgstr "بازگشت به خانه"
+
+msgid "Tell us a little about your German goals and we will help you find the right next step."
+msgstr "کمی درباره هدف‌هایت در یادگیری آلمانی بگو تا برای پیدا کردن قدم بعدی مناسب کمکت کنیم."
+
+msgid "Full name"
+msgstr "نام و نام خانوادگی"
+
+msgid "Email address"
+msgstr "آدرس ایمیل"
+
+msgid "Phone number"
+msgstr "شماره تلفن"
+
+msgid "Optional — only needed if you prefer a call."
+msgstr "اختیاری — فقط اگر تماس تلفنی را ترجیح می‌دهی لازم است."
+
+msgid "Current German level"
+msgstr "سطح فعلی آلمانی"
+
+msgid "Choose your level"
+msgstr "سطحت را انتخاب کن"
+
+msgid "Not sure yet"
+msgstr "هنوز مطمئن نیستم"
+
+msgid "How should we reach you?"
+msgstr "چطور با تو تماس بگیریم؟"
+
+msgid "Choose the option that feels easiest."
+msgstr "راحت‌ترین گزینه را انتخاب کن."
+
+msgid "Email"
+msgstr "ایمیل"
+
+msgid "Phone call"
+msgstr "تماس تلفنی"
+
+msgid "Either is fine"
+msgstr "هرکدام مناسب است"
+
+msgid "Preferred time"
+msgstr "زمان ترجیحی"
+
+msgid "For example: weekday evenings or Saturday morning."
+msgstr "مثلاً: عصرهای روزهای کاری یا صبح شنبه."
+
+msgid "What would you like help with?"
+msgstr "در چه زمینه‌ای کمک می‌خواهی؟"
+
+msgid "Tell us about your goals, schedule or questions."
+msgstr "درباره هدف‌ها، برنامه زمانی یا پرسش‌هایت بگو."

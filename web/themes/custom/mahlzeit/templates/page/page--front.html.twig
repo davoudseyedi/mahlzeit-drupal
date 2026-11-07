@@ -10,17 +10,38 @@
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-navigation" data-menu-toggle>
         <span class="visually-hidden">{{ 'Open navigation'|t }}</span>
-        <span></span><span></span><span></span>
+        <span class="menu-toggle__line"></span><span class="menu-toggle__line"></span><span class="menu-toggle__line"></span>
       </button>
       <nav class="desktop-nav" aria-label="{{ 'Main navigation'|t }}">{{ page.primary_menu }}</nav>
       <div class="header-actions">
+        {% if language_switcher %}
+          <nav class="language-switcher" aria-label="{{ 'Choose language'|t }}" dir="ltr">
+            {% for language in language_switcher %}
+              <a class="language-switcher__link{% if language.active %} is-active{% endif %}" href="{{ language.url }}" hreflang="{{ language.code|lower }}" lang="{{ language.code|lower }}"{% if language.active %} aria-current="page"{% endif %}>{{ language.label }}</a>
+            {% endfor %}
+          </nav>
+        {% endif %}
         <a class="button button--small button--secondary" href="{{ path('mahlzeit_consultation.form') }}">{{ 'Request consultation'|t }}</a>
         <a class="button button--small" href="https://app.mahlzeitlab.com" target="_blank" rel="noopener noreferrer">{{ 'Start learning'|t }}</a>
       </div>
     </div>
     <div class="mobile-nav" id="mobile-navigation" data-mobile-nav hidden>
-      <div class="container">{{ page.primary_menu }}<a class="button button--block" href="https://app.mahlzeitlab.com" target="_blank" rel="noopener noreferrer">{{ 'Start learning'|t }}</a></div>
+      <div class="container">
+        {{ page.primary_menu }}
+        {% if language_switcher %}
+          <nav class="language-switcher language-switcher--mobile" aria-label="{{ 'Choose language'|t }}" dir="ltr">
+            {% for language in language_switcher %}
+              <a class="language-switcher__link{% if language.active %} is-active{% endif %}" href="{{ language.url }}" hreflang="{{ language.code|lower }}" lang="{{ language.code|lower }}"{% if language.active %} aria-current="page"{% endif %}>{{ language.label }}</a>
+            {% endfor %}
+          </nav>
+        {% endif %}
+        <div class="mobile-nav__actions">
+          <a class="button button--secondary button--block" href="{{ path('mahlzeit_consultation.form') }}">{{ 'Request consultation'|t }}</a>
+          <a class="button button--block" href="https://app.mahlzeitlab.com" target="_blank" rel="noopener noreferrer">{{ 'Start learning'|t }}</a>
+        </div>
+      </div>
     </div>
+    <button class="mobile-nav-backdrop" type="button" data-mobile-nav-backdrop hidden aria-label="{{ 'Close navigation'|t }}"></button>
   </header>
 
   {% if page.breadcrumb %}<div class="container breadcrumb-region">{{ page.breadcrumb }}</div>{% endif %}
@@ -41,21 +62,21 @@
           <p class="osd-home-hero__note"><span aria-hidden="true">✓</span>{{ 'A1 free · A2–B2 with a subscription'|t }}</p>
         </div>
 
-        <div class="osd-hero-visual" aria-label="{{ 'Vorschau auf die ÖSD-Sprechprüfung'|t }}">
+        <div class="osd-hero-visual" lang="de" dir="ltr" aria-label="Vorschau auf die ÖSD-Sprechprüfung">
           <div class="osd-orbit osd-orbit--one" aria-hidden="true"></div>
           <div class="osd-orbit osd-orbit--two" aria-hidden="true"></div>
           <article class="osd-test-window">
-            <div class="osd-test-window__top"><span><i></i>{{ 'ÖSD · SPRECHEN'|t }}</span><b>B1</b></div>
+            <div class="osd-test-window__top"><span><i></i>ÖSD · SPRECHEN</span><b>B1</b></div>
             <div class="osd-test-window__body">
-              <span class="osd-test-window__eyebrow">{{ 'MODELLTEST 1'|t }}</span>
-              <h2>{{ 'Gesundheit'|t }}</h2>
-              <div class="osd-progress" aria-label="{{ 'Drei Prüfungsteile'|t }}"><span class="is-active">01</span><i></i><span>02</span><i></i><span>03</span></div>
-              <div class="osd-prompt"><small>{{ 'TEIL 2 · MONOLOG'|t }}</small><strong>{{ 'Bild beschreiben und Meinung äußern'|t }}</strong><span>{{ '1 Bild + Meinung'|t }}</span></div>
+              <span class="osd-test-window__eyebrow">MODELLTEST 1</span>
+              <h2>Gesundheit</h2>
+              <div class="osd-progress" aria-label="Drei Prüfungsteile"><span class="is-active">01</span><i></i><span>02</span><i></i><span>03</span></div>
+              <div class="osd-prompt"><small>TEIL 2 · MONOLOG</small><strong>Bild beschreiben und Meinung äußern</strong><span>1 Bild + Meinung</span></div>
             </div>
-            <div class="osd-test-window__bottom"><span><i></i>{{ 'KI-Prüfungsleitung'|t }}</span><b>{{ 'ca. 11 Min.'|t }}</b></div>
+            <div class="osd-test-window__bottom"><span><i></i>KI-Prüfungsleitung</span><b>ca. 11 Min.</b></div>
           </article>
-          <div class="osd-float osd-float--parts"><strong>3</strong><span>{{ 'Prüfungsteile'|t }}</span></div>
-          <div class="osd-float osd-float--report"><span aria-hidden="true">✓</span><div><b>{{ 'Abschlussbericht'|t }}</b><small>{{ 'nach dem Test'|t }}</small></div></div>
+          <div class="osd-float osd-float--parts"><strong>3</strong><span>Prüfungsteile</span></div>
+          <div class="osd-float osd-float--report"><span aria-hidden="true">✓</span><div><b>Abschlussbericht</b><small>nach dem Test</small></div></div>
         </div>
       </div>
     </section>

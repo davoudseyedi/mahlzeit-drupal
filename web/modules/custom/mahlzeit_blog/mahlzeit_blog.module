@@ -16,6 +16,9 @@ function mahlzeit_blog_theme(array $existing, string $type, string $theme, strin
         'pager' => NULL,
         'can_create' => FALSE,
         'create_url' => '',
+        'categories' => [],
+        'all_categories_url' => '',
+        'selected_category' => 0,
       ],
       'template' => 'blog-listing',
       'path' => $path . '/templates',
@@ -53,7 +56,22 @@ function mahlzeit_blog_update_11001(): void {
 }
 
 /**
- * Ensures a blog node has a unique /blog/{machine-name} alias.
+ * Migrates blog aliases to /blog/{category}/{slug} URLs.
+ */
+function mahlzeit_blog_update_11002(): void {
+  $storage = \Drupal::entityTypeManager()->getStorage('node');
+  $nids = $storage->getQuery()
+    ->accessCheck(FALSE)
+    ->condition('type', 'blog')
+    ->execute();
+
+  foreach ($storage->loadMultiple($nids) as $node) {
+    mahlzeit_blog_ensure_alias($node);
+  }
+}
+
+/**
+ * Ensures a blog node has a unique /blog/{category}/{machine-name} alias.
  */
 function mahlzeit_blog_ensure_alias(\Drupal\node\NodeInterface $node): void {
   if ($node->bundle() !== 'blog' || !$node->id()) {
@@ -68,16 +86,31 @@ function mahlzeit_blog_ensure_alias(\Drupal\node\NodeInterface $node): void {
     'langcode' => $langcode,
   ]);
 
-  // Preserve an alias explicitly created by an editor or another module.
-  if ($existing) {
-    return;
+  $category_slug = 'general';
+  if ($node->hasField('field_blog_category') && !$node->get('field_blog_category')->isEmpty()) {
+    $category = $node->get('field_blog_category')->referencedEntities()[0] ?? NULL;
+    if ($category) {
+      $category_slug = mahlzeit_blog_machine_name($category->label(), (int) $category->id());
+    }
   }
 
-  $base_alias = '/blog/' . mahlzeit_blog_machine_name($node->label(), (int) $node->id());
+  $base_alias = '/blog/' . $category_slug . '/' . mahlzeit_blog_machine_name($node->label(), (int) $node->id());
   $alias = $base_alias;
   $suffix = 2;
-  while ($storage->loadByProperties(['alias' => $alias, 'langcode' => $langcode])) {
+  while ($conflicts = $storage->loadByProperties(['alias' => $alias, 'langcode' => $langcode])) {
+    $conflict = reset($conflicts);
+    if ($conflict && $conflict->getPath() === $system_path) {
+      break;
+    }
     $alias = $base_alias . '-' . $suffix++;
+  }
+
+  if ($existing) {
+    $path_alias = reset($existing);
+    if ($path_alias && $path_alias->getAlias() !== $alias) {
+      $path_alias->setAlias($alias)->save();
+    }
+    return;
   }
 
   $storage->create([

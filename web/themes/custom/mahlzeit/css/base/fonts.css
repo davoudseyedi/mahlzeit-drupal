@@ -1,0 +1,11 @@
+html[lang^="fa"] {
+  --font: "Vazirmatn", "Noto Sans Arabic", Tahoma, Arial, sans-serif;
+}
+
+html[lang^="fa"] body,
+html[lang^="fa"] button,
+html[lang^="fa"] input,
+html[lang^="fa"] select,
+html[lang^="fa"] textarea {
+  font-family: var(--font);
+}

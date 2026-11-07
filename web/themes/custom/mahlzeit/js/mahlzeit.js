@@ -5,13 +5,52 @@
     attach: function (context) {
       once('mahlzeit-navigation', '[data-menu-toggle]', context).forEach(function (toggle) {
         var nav = document.querySelector('[data-mobile-nav]');
+        var backdrop = document.querySelector('[data-mobile-nav-backdrop]');
         if (!nav) return;
+
+        var setMenuOpen = function (open, restoreFocus) {
+          toggle.setAttribute('aria-expanded', String(open));
+          nav.hidden = !open;
+          nav.setAttribute('aria-hidden', String(!open));
+          if (backdrop) backdrop.hidden = !open;
+          document.body.classList.toggle('mobile-menu-open', open);
+
+          var label = toggle.querySelector('.visually-hidden');
+          if (label) label.textContent = open ? Drupal.t('Close navigation') : Drupal.t('Open navigation');
+
+          if (open) {
+            var firstLink = nav.querySelector('a');
+            if (firstLink) window.requestAnimationFrame(function () { firstLink.focus(); });
+          } else if (restoreFocus !== false) {
+            toggle.focus({ preventScroll: true });
+          }
+        };
+
+        setMenuOpen(false, false);
         toggle.addEventListener('click', function () {
-          var isOpen = toggle.getAttribute('aria-expanded') === 'true';
-          toggle.setAttribute('aria-expanded', String(!isOpen));
-          nav.hidden = isOpen;
-          toggle.querySelector('.visually-hidden').textContent = isOpen ? Drupal.t('Open navigation') : Drupal.t('Close navigation');
+          setMenuOpen(toggle.getAttribute('aria-expanded') !== 'true');
         });
+
+        if (backdrop) {
+          backdrop.addEventListener('click', function () { setMenuOpen(false); });
+        }
+
+        Array.prototype.forEach.call(nav.querySelectorAll('a'), function (link) {
+          link.addEventListener('click', function () { setMenuOpen(false, false); });
+        });
+
+        document.addEventListener('keydown', function (event) {
+          if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+            event.preventDefault();
+            setMenuOpen(false);
+          }
+        });
+
+        window.addEventListener('resize', function () {
+          if (window.innerWidth > 900 && toggle.getAttribute('aria-expanded') === 'true') {
+            setMenuOpen(false, false);
+          }
+        }, { passive: true });
       });
       once('mahlzeit-header-scroll', '[data-site-header]', context).forEach(function (header) {
         var update = function () { header.classList.toggle('is-scrolled', window.scrollY > 8); };

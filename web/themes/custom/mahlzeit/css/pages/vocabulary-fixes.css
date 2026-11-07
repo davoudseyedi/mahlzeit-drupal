@@ -1,0 +1,6 @@
+/* Keep toggled vocabulary views out of the layout while hidden. */
+.vocabulary-list-view[hidden],
+.vocabulary-flashcard[hidden],
+.vocabulary-flashcard-controls[hidden] {
+  display: none !important;
+}

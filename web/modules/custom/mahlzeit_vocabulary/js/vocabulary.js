@@ -10,6 +10,7 @@
         var viewButtons = Array.prototype.slice.call(app.querySelectorAll('[data-vocabulary-view]'));
         var previous = app.querySelector('[data-vocabulary-prev]');
         var next = app.querySelector('[data-vocabulary-next]');
+        var controls = app.querySelector('[data-vocabulary-controls]');
         var currentLabel = app.querySelector('[data-vocabulary-current]');
         var progress = app.querySelector('[data-vocabulary-progress]');
         var index = 0;
@@ -31,6 +32,9 @@
 
           flashcards.hidden = view !== 'flashcards';
           list.hidden = view !== 'list';
+          if (controls) {
+            controls.hidden = view !== 'flashcards';
+          }
           viewButtons.forEach(function (button) {
             var active = button.getAttribute('data-vocabulary-view') === view;
             button.classList.toggle('is-active', active);

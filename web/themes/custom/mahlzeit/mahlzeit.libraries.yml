@@ -4,18 +4,24 @@ global:
       css/base/reset.css: {}
       css/base/tokens.css: {}
       css/base/base.css: {}
+      css/base/fonts.css: {}
+      css/base/rtl.css: {}
     component:
       css/components/components.css: {}
       css/components/branding.css: {}
+      css/components/language-switcher.css: {}
       css/layout/layout.css: {}
       css/pages/pages.css: {}
       css/pages/news.css: {}
       css/pages/vocabulary.css: {}
+      css/pages/vocabulary-fixes.css: {}
       css/pages/home-vocabulary.css: {}
       css/pages/consultation.css: {}
       css/pages/blog-detail.css: {}
+      css/pages/blog-filter.css: {}
       css/pages/footer.css: {}
       css/pages/osd-home.css: {}
+      css/pages/mobile-menu.css: {}
   dependencies:
     - core/normalize
 

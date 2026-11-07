@@ -18,6 +18,44 @@ function mahlzeit_preprocess_html(array &$variables): void {
 function mahlzeit_preprocess_page(array &$variables): void {
   $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
 
+  $language_manager = \Drupal::service('language_manager');
+  $route_match = \Drupal::routeMatch();
+  $current_url = $variables['is_front'] || !$route_match->getRouteObject()
+    ? \Drupal\Core\Url::fromRoute('<front>')
+    : \Drupal\Core\Url::fromRouteMatch($route_match);
+  $switch_links = $language_manager->getLanguageSwitchLinks('language_interface', $current_url);
+  $active_language = $language_manager->getCurrentLanguage('language_interface')->getId();
+  $language_labels = [
+    'en' => 'English',
+    'fa' => 'فارسی',
+    'de' => 'Deutsch',
+  ];
+
+  $variables['language_switcher'] = [];
+  foreach ($switch_links->links ?? [] as $langcode => $link) {
+    if (empty($link['url']) || !$link['url'] instanceof \Drupal\Core\Url) {
+      continue;
+    }
+
+    $language_url = clone $link['url'];
+    if (!empty($link['language'])) {
+      $language_url->setOption('language', $link['language']);
+    }
+    if (isset($link['query'])) {
+      $language_url->setOption('query', $link['query']);
+    }
+
+    $variables['language_switcher'][] = [
+      'code' => $langcode,
+      'label' => $language_labels[$langcode] ?? strtoupper($langcode),
+      'url' => $language_url->toString(),
+      'active' => $langcode === $active_language,
+    ];
+  }
+  $variables['#cache']['contexts'][] = 'url.path';
+  $variables['#cache']['contexts'][] = 'url.query_args';
+  $variables['#cache']['contexts'][] = 'languages:language_interface';
+
   $auth_routes = [
     'user.login' => 'login',
     'user.register' => 'register',

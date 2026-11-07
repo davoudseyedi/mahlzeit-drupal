@@ -10,17 +10,38 @@
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-navigation" data-menu-toggle>
         <span class="visually-hidden">{{ 'Open navigation'|t }}</span>
-        <span></span><span></span><span></span>
+        <span class="menu-toggle__line"></span><span class="menu-toggle__line"></span><span class="menu-toggle__line"></span>
       </button>
       <nav class="desktop-nav" aria-label="{{ 'Main navigation'|t }}">{{ page.primary_menu }}</nav>
       <div class="header-actions">
+        {% if language_switcher %}
+          <nav class="language-switcher" aria-label="{{ 'Choose language'|t }}" dir="ltr">
+            {% for language in language_switcher %}
+              <a class="language-switcher__link{% if language.active %} is-active{% endif %}" href="{{ language.url }}" hreflang="{{ language.code|lower }}" lang="{{ language.code|lower }}"{% if language.active %} aria-current="page"{% endif %}>{{ language.label }}</a>
+            {% endfor %}
+          </nav>
+        {% endif %}
         <a class="button button--small button--secondary" href="{{ path('mahlzeit_consultation.form') }}">{{ 'Request consultation'|t }}</a>
         <a class="button button--small" href="https://app.mahlzeitlab.com">{{ 'Start learning'|t }}</a>
       </div>
     </div>
     <div class="mobile-nav" id="mobile-navigation" data-mobile-nav hidden>
-      <div class="container">{{ page.primary_menu }}<a class="button button--block" href="https://app.mahlzeitlab.com">{{ 'Start learning'|t }}</a></div>
+      <div class="container">
+        {{ page.primary_menu }}
+        {% if language_switcher %}
+          <nav class="language-switcher language-switcher--mobile" aria-label="{{ 'Choose language'|t }}" dir="ltr">
+            {% for language in language_switcher %}
+              <a class="language-switcher__link{% if language.active %} is-active{% endif %}" href="{{ language.url }}" hreflang="{{ language.code|lower }}" lang="{{ language.code|lower }}"{% if language.active %} aria-current="page"{% endif %}>{{ language.label }}</a>
+            {% endfor %}
+          </nav>
+        {% endif %}
+        <div class="mobile-nav__actions">
+          <a class="button button--secondary button--block" href="{{ path('mahlzeit_consultation.form') }}">{{ 'Request consultation'|t }}</a>
+          <a class="button button--block" href="https://app.mahlzeitlab.com">{{ 'Start learning'|t }}</a>
+        </div>
+      </div>
     </div>
+    <button class="mobile-nav-backdrop" type="button" data-mobile-nav-backdrop hidden aria-label="{{ 'Close navigation'|t }}"></button>
   </header>
 
   {% if page.breadcrumb %}<div class="container breadcrumb-region">{{ page.breadcrumb }}</div>{% endif %}

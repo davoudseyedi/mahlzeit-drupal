@@ -6,6 +6,15 @@
       <p>{{ 'Practical German, learning ideas and stories to help you understand more and speak with confidence.'|t }}</p>
     </header>
 
+    {% if categories %}
+      <nav class="blog-category-filter" aria-label="{{ 'Filter blog posts by category'|t }}">
+        <a class="blog-category-filter__link{% if selected_category == 0 %} is-active{% endif %}" href="{{ all_categories_url }}"{% if selected_category == 0 %} aria-current="page"{% endif %}>{{ 'All categories'|t }}</a>
+        {% for category in categories %}
+          <a class="blog-category-filter__link{% if selected_category == category.id %} is-active{% endif %}" href="{{ category.url }}"{% if selected_category == category.id %} aria-current="page"{% endif %}>{{ category.label }}</a>
+        {% endfor %}
+      </nav>
+    {% endif %}
+
     {% if posts %}
       <div class="blog-post-grid">
         {% for post in posts %}

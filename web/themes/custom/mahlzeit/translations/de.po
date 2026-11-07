@@ -1,0 +1,587 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Mahlzeit\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Mahlzeit home"
+msgstr "Mahlzeit-Startseite"
+
+msgid "Open navigation"
+msgstr "Navigation öffnen"
+
+msgid "Close navigation"
+msgstr "Navigation schließen"
+
+msgid "Skip to main content"
+msgstr "Zum Hauptinhalt springen"
+
+msgid "Main navigation"
+msgstr "Hauptnavigation"
+
+msgid "Choose language"
+msgstr "Sprache auswählen"
+
+msgid "Request consultation"
+msgstr "Beratung anfragen"
+
+msgid "Start learning"
+msgstr "Lernen starten"
+
+msgid "Home"
+msgstr "Startseite"
+
+msgid "News"
+msgstr "Nachrichten"
+
+msgid "Vocabulary"
+msgstr "Vokabeln"
+
+msgid "Blog"
+msgstr "Blog"
+
+msgid "Contact us"
+msgstr "Kontakt"
+
+msgid "Open the app"
+msgstr "App öffnen"
+
+msgid "Privacy"
+msgstr "Datenschutz"
+
+msgid "Terms"
+msgstr "Nutzungsbedingungen"
+
+msgid "Imprint"
+msgstr "Impressum"
+
+msgid "Product"
+msgstr "Produkt"
+
+msgid "Learn"
+msgstr "Lernen"
+
+msgid "Resources"
+msgstr "Ressourcen"
+
+msgid "Company"
+msgstr "Unternehmen"
+
+msgid "Legal"
+msgstr "Rechtliches"
+
+msgid "Learn German. Simply understand."
+msgstr "Deutsch lernen. Einfach verstehen."
+
+msgid "Made for real conversations."
+msgstr "Für echte Gespräche gemacht."
+
+msgid "View Mahlzeit eNAMAD trust seal"
+msgstr "Mahlzeit-eNAMAD-Vertrauenssiegel ansehen"
+
+msgid "eNAMAD trust seal"
+msgstr "eNAMAD-Vertrauenssiegel"
+
+msgid "ÖSD PREPARATION"
+msgstr "ÖSD-VORBEREITUNG"
+
+msgid "Speak German like you are in the real exam."
+msgstr "Sprich Deutsch, als wärst du in der echten Prüfung."
+
+msgid "Practise the ÖSD speaking exam with model tests, clear exam parts and an AI examiner at your level."
+msgstr "Übe die ÖSD-Sprechprüfung mit Modelltests, klaren Prüfungsteilen und einer KI-Prüfungsleitung auf deinem Niveau."
+
+msgid "Start ÖSD test"
+msgstr "ÖSD-Test starten"
+
+msgid "Find your level"
+msgstr "Niveau finden"
+
+msgid "A1 free · A2–B2 with a subscription"
+msgstr "A1 kostenlos · A2–B2 mit Abo"
+
+msgid "Vorschau auf die ÖSD-Sprechprüfung"
+msgstr "Vorschau auf die ÖSD-Sprechprüfung"
+
+msgid "ÖSD · SPRECHEN"
+msgstr "ÖSD · SPRECHEN"
+
+msgid "MODELLTEST 1"
+msgstr "MODELLTEST 1"
+
+msgid "Gesundheit"
+msgstr "Gesundheit"
+
+msgid "Drei Prüfungsteile"
+msgstr "Drei Prüfungsteile"
+
+msgid "TEIL 2 · MONOLOG"
+msgstr "TEIL 2 · MONOLOG"
+
+msgid "Bild beschreiben und Meinung äußern"
+msgstr "Bild beschreiben und Meinung äußern"
+
+msgid "1 Bild + Meinung"
+msgstr "1 Bild + Meinung"
+
+msgid "KI-Prüfungsleitung"
+msgstr "KI-Prüfungsleitung"
+
+msgid "ca. 11 Min."
+msgstr "ca. 11 Min."
+
+msgid "Prüfungsteile"
+msgstr "Prüfungsteile"
+
+msgid "Abschlussbericht"
+msgstr "Abschlussbericht"
+
+msgid "nach dem Test"
+msgstr "nach dem Test"
+
+msgid "ÖSD test highlights"
+msgstr "ÖSD-Test auf einen Blick"
+
+msgid "4 levels"
+msgstr "4 Niveaus"
+
+msgid "A1 to B2"
+msgstr "A1 bis B2"
+
+msgid "3 exam parts"
+msgstr "3 Prüfungsteile"
+
+msgid "Like the real test"
+msgstr "Wie in der echten Prüfung"
+
+msgid "AI examiner"
+msgstr "KI-Prüfungsleitung"
+
+msgid "Question by question"
+msgstr "Frage für Frage"
+
+msgid "Final report"
+msgstr "Abschlussbericht"
+
+msgid "Feedback after the test"
+msgstr "Feedback nach dem Test"
+
+msgid "Today’s vocabulary"
+msgstr "Vokabel des Tages"
+
+msgid "Word"
+msgstr "Wort"
+
+msgid "Learn how this German word is used."
+msgstr "Lerne, wie dieses deutsche Wort verwendet wird."
+
+msgid "Practise flashcards"
+msgstr "Karteikarten üben"
+
+msgid "THE PROCESS"
+msgstr "DER ABLAUF"
+
+msgid "One model test. Three real exam parts."
+msgstr "Ein Modelltest. Drei echte Prüfungsteile."
+
+msgid "Every ÖSD test follows a clear flow. You speak, react and receive feedback afterwards."
+msgstr "Jeder ÖSD-Test folgt einem klaren Ablauf. Du sprichst, reagierst und erhältst danach Feedback."
+
+msgid "Introduce yourself"
+msgstr "Stell dich vor"
+
+msgid "Answer personal questions and talk about your everyday life, experience or goals."
+msgstr "Beantworte persönliche Fragen und sprich über deinen Alltag, deine Erfahrungen oder Ziele."
+
+msgid "Introduction"
+msgstr "Vorstellung"
+
+msgid "Picture & opinion"
+msgstr "Bild & Meinung"
+
+msgid "Describe a picture, tell a picture story or give a short talk—depending on your level."
+msgstr "Beschreibe ein Bild, erzähle eine Bildgeschichte oder halte einen kurzen Vortrag – je nach Niveau."
+
+msgid "Picture description · monologue · presentation"
+msgstr "Bildbeschreibung · Monolog · Präsentation"
+
+msgid "Take action together"
+msgstr "Gemeinsam handeln"
+
+msgid "Plan, decide and discuss with the AI examiner—always one question at a time."
+msgstr "Plane, entscheide und diskutiere mit der KI-Prüfungsleitung – immer eine Frage nach der anderen."
+
+msgid "Dialogue · planning · discussion"
+msgstr "Dialog · Planung · Diskussion"
+
+msgid "MODEL TESTS"
+msgstr "MODELLTESTS"
+
+msgid "Choose your level and start."
+msgstr "Wähle dein Niveau und starte."
+
+msgid "Live from the app’s ÖSD catalog: topics, duration and exam parts are loaded from the API."
+msgstr "Direkt aus dem ÖSD-Katalog der App: Themen, Dauer und Prüfungsteile werden über die API geladen."
+
+msgid "Tests"
+msgstr "Tests"
+
+msgid "ÖSD speaking"
+msgstr "ÖSD Sprechen"
+
+msgid "parts"
+msgstr "Teile"
+
+msgid "Open all tests"
+msgstr "Alle Tests öffnen"
+
+msgid "The model tests are loading."
+msgstr "Die Modelltests werden geladen."
+
+msgid "Open in the app"
+msgstr "In der App öffnen"
+
+msgid "PLANS FROM THE APP"
+msgstr "TARIFE AUS DER APP"
+
+msgid "Choose the access that fits you."
+msgstr "Wähle den Zugang, der zu dir passt."
+
+msgid "Prices and limits are loaded directly from the current Mahlzeit API."
+msgstr "Preise und Limits werden direkt aus der aktuellen Mahlzeit-API geladen."
+
+msgid "Recommended"
+msgstr "Empfohlen"
+
+msgid "month"
+msgstr "Monat"
+
+msgid "months"
+msgstr "Monate"
+
+msgid "Full access to the learning experience."
+msgstr "Voller Zugang zum Lernerlebnis."
+
+msgid "minutes per month"
+msgstr "Minuten pro Monat"
+
+msgid "View plan in app"
+msgstr "Tarif in der App ansehen"
+
+msgid "EXAM SIMULATION"
+msgstr "PRÜFUNGSSIMULATION"
+
+msgid "Speak freely. Get your report."
+msgstr "Sprich frei. Erhalte deinen Bericht."
+
+msgid "The AI stays in the examiner role, asks one question at a time and does not interrupt you with corrections. Your evaluation comes at the end."
+msgstr "Die KI bleibt in der Rolle der Prüfungsleitung, stellt immer eine Frage und unterbricht dich nicht mit Korrekturen. Deine Bewertung kommt am Ende."
+
+msgid "Clear exam questions, one at a time"
+msgstr "Klare Prüfungsfragen, eine nach der anderen"
+
+msgid "No interruptions during the conversation"
+msgstr "Keine Unterbrechungen während des Gesprächs"
+
+msgid "Evaluation and feedback in the final report"
+msgstr "Bewertung und Feedback im Abschlussbericht"
+
+msgid "Open ÖSD test"
+msgstr "ÖSD-Test öffnen"
+
+msgid "Speaking report preview"
+msgstr "Vorschau auf den Sprechbericht"
+
+msgid "FINAL REPORT"
+msgstr "ABSCHLUSSBERICHT"
+
+msgid "Overall"
+msgstr "Gesamt"
+
+msgid "Task"
+msgstr "Aufgabe"
+
+msgid "Fluency"
+msgstr "Flüssigkeit"
+
+msgid "Expression"
+msgstr "Ausdruck"
+
+msgid "Next focus"
+msgstr "Nächster Fokus"
+
+msgid "Explain your opinion in more detail."
+msgstr "Begründe deine Meinung ausführlicher."
+
+msgid "LATEST NEWS"
+msgstr "AKTUELLE NACHRICHTEN"
+
+msgid "Learn German with the latest news."
+msgstr "Lerne Deutsch mit den neuesten Nachrichten."
+
+msgid "All news"
+msgstr "Alle Nachrichten"
+
+msgid "Read and learn"
+msgstr "Lesen und lernen"
+
+msgid "LATEST BLOG"
+msgstr "AKTUELL IM BLOG"
+
+msgid "Practical ideas for learning German."
+msgstr "Praktische Ideen zum Deutschlernen."
+
+msgid "Go to blog"
+msgstr "Zum Blog"
+
+msgid "German learning"
+msgstr "Deutschlernen"
+
+msgid "Read article"
+msgstr "Artikel lesen"
+
+msgid "YOUR NEXT STEP"
+msgstr "DEIN NÄCHSTER SCHRITT"
+
+msgid "Ready for your next model test?"
+msgstr "Bereit für deinen nächsten Modelltest?"
+
+msgid "Choose your level and speak your way through the ÖSD exam."
+msgstr "Wähle dein Niveau und sprich dich durch die ÖSD-Prüfung."
+
+msgid "Start model tests"
+msgstr "Modelltests starten"
+
+msgid "Personal consultation"
+msgstr "Persönliche Beratung"
+
+msgid "Fresh from Mahlzeit"
+msgstr "Neu von Mahlzeit"
+
+msgid "The Mahlzeit blog."
+msgstr "Der Mahlzeit-Blog."
+
+msgid "Practical German, learning ideas and stories to help you understand more and speak with confidence."
+msgstr "Praktisches Deutsch, Lernideen und Geschichten, die dir helfen, mehr zu verstehen und sicher zu sprechen."
+
+msgid "Filter blog posts by category"
+msgstr "Blogbeiträge nach Kategorie filtern"
+
+msgid "All categories"
+msgstr "Alle Kategorien"
+
+msgid "Read @title"
+msgstr "@title lesen"
+
+msgid "Article tags"
+msgstr "Artikel-Tags"
+
+msgid "The next story starts here."
+msgstr "Die nächste Geschichte beginnt hier."
+
+msgid "No blog posts have been published yet. Check back soon for practical German learning ideas."
+msgstr "Es wurden noch keine Blogbeiträge veröffentlicht. Schau bald wieder vorbei – mit praktischen Ideen zum Deutschlernen."
+
+msgid "Create the first post"
+msgstr "Ersten Beitrag erstellen"
+
+msgid "Back to all articles"
+msgstr "Zurück zu allen Artikeln"
+
+msgid "Learn from what is happening around you"
+msgstr "Lerne aus dem, was um dich herum passiert"
+
+msgid "German news, made practical."
+msgstr "Deutsche Nachrichten, praktisch aufbereitet."
+
+msgid "Read current stories from Germany, build useful vocabulary and keep your German connected to real life."
+msgstr "Lies aktuelle Geschichten aus Deutschland, baue nützliche Vokabeln auf und verbinde dein Deutsch mit dem echten Leben."
+
+msgid "News categories"
+msgstr "Nachrichtenkategorien"
+
+msgid "News date filters"
+msgstr "Datumsfilter für Nachrichten"
+
+msgid "All dates"
+msgstr "Alle Zeiträume"
+
+msgid "Today"
+msgstr "Heute"
+
+msgid "Last 7 days"
+msgstr "Letzte 7 Tage"
+
+msgid "Last 30 days"
+msgstr "Letzte 30 Tage"
+
+msgid "Video"
+msgstr "Video"
+
+msgid "Audio"
+msgstr "Audio"
+
+msgid "Open source"
+msgstr "Quelle öffnen"
+
+msgid "No news in this view yet."
+msgstr "In dieser Ansicht gibt es noch keine Nachrichten."
+
+msgid "The feed may be temporarily unavailable. Please try again in a moment."
+msgstr "Der Feed ist möglicherweise vorübergehend nicht verfügbar. Bitte versuche es gleich noch einmal."
+
+msgid "Back to all news"
+msgstr "Zurück zu allen Nachrichten"
+
+msgid "Important words"
+msgstr "Wichtige Wörter"
+
+msgid "Source: Tagesschau"
+msgstr "Quelle: Tagesschau"
+
+msgid "Open original article"
+msgstr "Originalartikel öffnen"
+
+msgid "Build your German vocabulary"
+msgstr "Baue deinen deutschen Wortschatz auf"
+
+msgid "One useful word at a time."
+msgstr "Ein nützliches Wort nach dem anderen."
+
+msgid "Learn practical German with a daily word, clear meanings and lightweight flashcards you can revisit at your own pace."
+msgstr "Lerne praktisches Deutsch mit einem täglichen Wort, klaren Bedeutungen und einfachen Karteikarten in deinem eigenen Tempo."
+
+msgid "A word worth keeping."
+msgstr "Ein Wort, das bleibt."
+
+msgid "Start here, then turn the card library into a small daily habit."
+msgstr "Starte hier und mach aus der Kartensammlung eine kleine tägliche Gewohnheit."
+
+msgid "Keep going"
+msgstr "Bleib dran"
+
+msgid "Your vocabulary library."
+msgstr "Deine Vokabelsammlung."
+
+msgid "word ready to practise."
+msgstr "Wort zum Üben bereit."
+
+msgid "words ready to practise."
+msgstr "Wörter zum Üben bereit."
+
+msgid "Vocabulary view"
+msgstr "Vokabelansicht"
+
+msgid "Flashcards"
+msgstr "Karteikarten"
+
+msgid "List"
+msgstr "Liste"
+
+msgid "Reveal vocabulary word"
+msgstr "Vokabel anzeigen"
+
+msgid "Click to reveal the meaning"
+msgstr "Klicke, um die Bedeutung zu sehen"
+
+msgid "Click to turn back"
+msgstr "Klicke, um die Karte umzudrehen"
+
+msgid "Previous word"
+msgstr "Vorheriges Wort"
+
+msgid "Next word"
+msgstr "Nächstes Wort"
+
+msgid "Your vocabulary library is getting ready."
+msgstr "Deine Vokabelsammlung wird vorbereitet."
+
+msgid "Come back soon for the first daily German word."
+msgstr "Komm bald wieder für das erste deutsche Wort des Tages."
+
+msgid "A little help goes a long way"
+msgstr "Ein wenig Hilfe bringt dich weit"
+
+msgid "Let’s find your next step in German."
+msgstr "Finden wir deinen nächsten Schritt im Deutschen."
+
+msgid "Request a personal consultation and tell us where you want your German to take you. We will come back with a practical recommendation."
+msgstr "Bitte um eine persönliche Beratung und erzähl uns, wohin dich dein Deutsch bringen soll. Wir melden uns mit einer praktischen Empfehlung."
+
+msgid "What we can help with"
+msgstr "Wobei wir helfen können"
+
+msgid "Choosing the right learning path"
+msgstr "Den richtigen Lernweg wählen"
+
+msgid "Building a speaking routine"
+msgstr "Eine Sprech-Routine aufbauen"
+
+msgid "Finding the right level and scenarios"
+msgstr "Das passende Niveau und Szenarien finden"
+
+msgid "No pressure, no complicated placement test — just a useful conversation about your goals."
+msgstr "Kein Druck, kein komplizierter Einstufungstest – nur ein hilfreiches Gespräch über deine Ziele."
+
+msgid "Request received."
+msgstr "Anfrage erhalten."
+
+msgid "Thanks — our team will review your request and get back to you using your preferred contact method."
+msgstr "Danke – unser Team prüft deine Anfrage und meldet sich über deine bevorzugte Kontaktmethode."
+
+msgid "Back to home"
+msgstr "Zurück zur Startseite"
+
+msgid "Tell us a little about your German goals and we will help you find the right next step."
+msgstr "Erzähl uns etwas über deine Deutschziele und wir helfen dir beim nächsten passenden Schritt."
+
+msgid "Full name"
+msgstr "Vor- und Nachname"
+
+msgid "Email address"
+msgstr "E-Mail-Adresse"
+
+msgid "Phone number"
+msgstr "Telefonnummer"
+
+msgid "Optional — only needed if you prefer a call."
+msgstr "Optional – nur nötig, wenn du einen Anruf bevorzugst."
+
+msgid "Current German level"
+msgstr "Aktuelles Deutschniveau"
+
+msgid "Choose your level"
+msgstr "Wähle dein Niveau"
+
+msgid "Not sure yet"
+msgstr "Noch nicht sicher"
+
+msgid "How should we reach you?"
+msgstr "Wie dürfen wir dich erreichen?"
+
+msgid "Choose the option that feels easiest."
+msgstr "Wähle die Option, die sich am einfachsten anfühlt."
+
+msgid "Email"
+msgstr "E-Mail"
+
+msgid "Phone call"
+msgstr "Telefonanruf"
+
+msgid "Either is fine"
+msgstr "Beides ist in Ordnung"
+
+msgid "Preferred time"
+msgstr "Bevorzugte Zeit"
+
+msgid "For example: weekday evenings or Saturday morning."
+msgstr "Zum Beispiel: werktags am Abend oder Samstagvormittag."
+
+msgid "What would you like help with?"
+msgstr "Wobei möchtest du Hilfe?"
+
+msgid "Tell us about your goals, schedule or questions."
+msgstr "Erzähl uns von deinen Zielen, deinem Zeitplan oder deinen Fragen."

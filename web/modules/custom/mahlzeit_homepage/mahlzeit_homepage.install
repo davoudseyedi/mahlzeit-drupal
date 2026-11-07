@@ -1,0 +1,80 @@
+<?php
+
+/**
+ * @file
+ * Install and update hooks for the Mahlzeit homepage module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function mahlzeit_homepage_install(): void {
+  mahlzeit_homepage_configure_languages();
+}
+
+/**
+ * Adds the public language setup and imports the custom interface translations.
+ */
+function mahlzeit_homepage_update_11001(): void {
+  mahlzeit_homepage_configure_languages();
+}
+
+/**
+ * Enables the language stack and configures English, Persian and German.
+ */
+function mahlzeit_homepage_configure_languages(): void {
+  $module_installer = \Drupal::service('module_installer');
+  $module_handler = \Drupal::moduleHandler();
+
+  foreach (['language', 'locale', 'config_translation', 'content_translation'] as $module) {
+    if (!$module_handler->moduleExists($module)) {
+      $module_installer->install([$module]);
+    }
+  }
+
+  \Drupal::configFactory()
+    ->getEditable('language.negotiation')
+    ->set('url.prefixes', ['en' => '', 'fa' => 'fa', 'de' => 'de'])
+    ->set('url.domains', ['en' => '', 'fa' => '', 'de' => ''])
+    ->set('negotiation.language_interface.enabled', [
+      'language-url' => 0,
+      'language-url-fallback' => 1,
+    ])
+    ->save();
+
+  foreach ([
+    'fa' => ['label' => 'Persian', 'direction' => 'rtl', 'weight' => 1],
+    'de' => ['label' => 'German', 'direction' => 'ltr', 'weight' => 2],
+  ] as $langcode => $language_data) {
+    $language = \Drupal\language\Entity\ConfigurableLanguage::load($langcode);
+    if (!$language) {
+      $language = \Drupal\language\Entity\ConfigurableLanguage::createFromLangcode($langcode);
+    }
+    $language
+      ->set('label', $language_data['label'])
+      ->set('direction', $language_data['direction'])
+      ->set('weight', $language_data['weight'])
+      ->save();
+  }
+
+  $theme_path = \Drupal::service('extension.list.theme')->getPath('mahlzeit');
+  foreach (['fa', 'de'] as $langcode) {
+    $translation_file = DRUPAL_ROOT . '/' . $theme_path . '/translations/' . $langcode . '.po';
+    if (!is_file($translation_file)) {
+      continue;
+    }
+
+    $file = (object) [
+      'uri' => $translation_file,
+      'langcode' => $langcode,
+    ];
+    \Drupal\locale\Gettext::fileToDatabase($file, [
+      'customized' => LOCALE_CUSTOMIZED,
+      'overwrite_options' => [
+        'not_customized' => TRUE,
+        'customized' => TRUE,
+      ],
+    ]);
+    _locale_refresh_translations([$langcode], []);
+  }
+}
