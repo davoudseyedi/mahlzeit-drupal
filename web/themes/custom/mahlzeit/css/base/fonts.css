@@ -1,4 +1,13 @@
-html[lang^="fa"] {
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("../../fonts/Vazirmatn-Variable.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+html[lang^="fa"],
+html[dir="rtl"] {
   --font: "Vazirmatn", "Noto Sans Arabic", Tahoma, Arial, sans-serif;
 }
 
@@ -6,6 +15,11 @@ html[lang^="fa"] body,
 html[lang^="fa"] button,
 html[lang^="fa"] input,
 html[lang^="fa"] select,
-html[lang^="fa"] textarea {
+html[lang^="fa"] textarea,
+html[dir="rtl"] body,
+html[dir="rtl"] button,
+html[dir="rtl"] input,
+html[dir="rtl"] select,
+html[dir="rtl"] textarea {
   font-family: var(--font);
 }
